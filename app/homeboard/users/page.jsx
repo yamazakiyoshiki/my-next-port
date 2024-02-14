@@ -2,7 +2,7 @@ import { deleteUser } from "@/app/lib/actions";
 import { fetchUsers } from "@/app/lib/data";
 import Pagination from "@/app/ui/homeboard/pagination/pagination";
 import Search from "@/app/ui/homeboard/search/search";
-import styles from "@/app/ui/dashboard/users/users.module.css";
+import styles from "@/app/ui/homeboard/users/users.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
