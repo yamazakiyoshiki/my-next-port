@@ -8,12 +8,12 @@ const AddProblemPage = () => {
         <input type="text" placeholder="問題のタイトル" name="title" required />
         <select name="cat" id="cat">
           <option value="" disabled selected>問題のカテゴリーを選択</option>
-            <option value="js">JavaScript</option>
-            <option value="ts">TypeScript</option>
-            <option value="react">React</option>
-            <option value="vue">Vue</option>
-            <option value="next">Next.Js</option>
-            <option value="nuxt">Nuxt.Js</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="TypeScript">TypeScript</option>
+            <option value="React">React</option>
+            <option value="Vue">Vue</option>
+            <option value="Next.js">Next.Js</option>
+            <option value="Nuxt.js">Nuxt.Js</option>
         </select>
         <input type="number" placeholder="問題のステップ数" name="step" min={0} max={10}required />
         {/* <input type="file" placeholder="完成図" name="img" accept="image/jpeg, image/png" /> */}

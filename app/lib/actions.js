@@ -70,7 +70,6 @@ export const updateUser = async (formData) => {
 
 export const deleteUser = async (formData) => {
   const { id } = Object.fromEntries(formData);
-
   try {
     await connectToDB();
     await User.findByIdAndDelete(id);
@@ -78,17 +77,14 @@ export const deleteUser = async (formData) => {
     console.log(err);
     throw new Error("Failed to delete user!");
   }
-
   revalidatePath("/homeboard/users");
 };
 
 export const addProblem = async (formData) => {
   const { title, desc, cat, step, level } =
     Object.fromEntries(formData);
-
   try {
     await connectToDB();
-
     const newProblem = new Problem({
       title,
       desc,
@@ -96,13 +92,11 @@ export const addProblem = async (formData) => {
       step,
       level,
     });
-
     await newProblem.save();
   } catch (err) {
     console.log(err);
     throw new Error("Failed to create problem!");
   }
-
   revalidatePath("/homeboard/problems");
   redirect("/homeboard/problems");
 };
@@ -110,10 +104,8 @@ export const addProblem = async (formData) => {
 export const updateProblem = async (formData) => {
   const { id, title, desc, cat, step, level } =
     Object.fromEntries(formData);
-
   try {
     await connectToDB();
-
     const updateFields = {
       title,
       desc,
@@ -121,25 +113,21 @@ export const updateProblem = async (formData) => {
       step,
       level,
     };
-
     Object.keys(updateFields).forEach(
       (key) =>
         (updateFields[key] === "" || undefined) && delete updateFields[key]
     );
-
     await Problem.findByIdAndUpdate(id, updateFields);
   } catch (err) {
     console.log(err);
     throw new Error("Failed to update problem!");
   }
-
   revalidatePath("/homeboard/problems");
   redirect("/homeboard/problems");
 };
 
 export const deleteProblem = async (formData) => {
   const { id } = Object.fromEntries(formData);
-
   try {
     await connectToDB();
     await Problem.findByIdAndDelete(id);
@@ -147,7 +135,6 @@ export const deleteProblem = async (formData) => {
     console.log(err);
     throw new Error("Failed to delete problem!");
   }
-
   revalidatePath("/homeboard/problems");
 };
 

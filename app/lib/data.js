@@ -7,7 +7,7 @@ export const fetchUsers = async (q, page) => {
   const ITEM_PER_PAGE = 2;
 
   try {
-    connectToDB();
+    await connectToDB();
     const count = await User.find({ username: { $regex: regex } }).count();
     const users = await User.find({ username: { $regex: regex } })
       .limit(ITEM_PER_PAGE)
@@ -22,7 +22,7 @@ export const fetchUsers = async (q, page) => {
 export const fetchUser = async (id) => {
   console.log(id);
   try {
-    connectToDB();
+    await connectToDB();
     const user = await User.findById(id);
     return user;
   } catch (err) {
@@ -52,7 +52,7 @@ export const fetchProblems = async (q, page) => {
 
 export const fetchProblem = async (id) => {
   try {
-    connectToDB();
+    await connectToDB();
     const problem = await Problem.findById(id);
     return problem;
   } catch (err) {

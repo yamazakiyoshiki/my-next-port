@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import styles from "@/app/ui/homeboard/problems/problems.module.css";
 import Search from "@/app/ui/homeboard/search/search";
@@ -10,7 +9,6 @@ const ProblemsPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
   const { count, problems } = await fetchProblems(q, page);
-
   return (
     <div className={styles.container}>
       <div className={styles.top}>
