@@ -18,28 +18,32 @@ const SingleProblemPage = async ({ params }) => {
       <div className={styles.formContainer}>
         <form action={updateProblem} className={styles.form}>
           <input type="hidden" name="id" value={problem.id} />
-          <label>Title</label>
+          <label>タイトル</label>
           <input type="text" name="title" placeholder={problem.title} />
-          <label>Price</label>
-          <input type="number" name="price" placeholder={problem.price} />
-          <label>Stock</label>
-          <input type="number" name="stock" placeholder={problem.stock} />
-          <label>Color</label>
-          <input
-            type="text"
-            name="color"
-            placeholder={problem.color || "color"}
-          />
-          <label>Size</label>
+          <label>ステップ数</label>
+          <input type="number" name="step" placeholder={problem.step} max="10" />
+          <label>完成図</label>
+          <input type="file" name="img" placeholder="写真を入れてください" accept="image/jpeg, image/png" />
+          <label>難易度</label>
+          <select name="level" id="level">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="A">C</option>
+          </select>
+          {/* <label>Size</label>
           <textarea
             type="text"
             name="size"
             placeholder={problem.size || "size"}
-          />
-          <label>Cat</label>
+          /> */}
+          <label>カテゴリー</label>
           <select name="cat" id="cat">
-            <option value="kitchen">Kitchen</option>
-            <option value="computers">Computers</option>
+            <option value="js">JavaScript</option>
+            <option value="ts">TypeScript</option>
+            <option value="react">React</option>
+            <option value="vue">Vue</option>
+            <option value="next">Next.Js</option>
+            <option value="nuxt">Nuxt.Js</option>
           </select>
           <label>Description</label>
           <textarea

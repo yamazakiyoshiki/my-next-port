@@ -12,8 +12,7 @@ export const addUser = async (formData) => {
     Object.fromEntries(formData);
 
   try {
-    connectToDB();
-
+    await connectToDB();
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -33,8 +32,8 @@ export const addUser = async (formData) => {
     throw new Error("Failed to create user!");
   }
 
-  revalidatePath("/dashboard/users");
-  redirect("/dashboard/users");
+  revalidatePath("/homeboard/users");
+  redirect("/homeboard/users");
 };
 
 export const updateUser = async (formData) => {
@@ -42,7 +41,7 @@ export const updateUser = async (formData) => {
     Object.fromEntries(formData);
 
   try {
-    connectToDB();
+    await connectToDB();
 
     const updateFields = {
       username,
@@ -65,30 +64,44 @@ export const updateUser = async (formData) => {
     throw new Error("Failed to update user!");
   }
 
-  revalidatePath("/dashboard/users");
-  redirect("/dashboard/users");
+  revalidatePath("/homeboard/users");
+  redirect("/homeboard/users");
+};
+
+export const deleteUser = async (formData) => {
+  const { id } = Object.fromEntries(formData);
+
+  try {
+    await connectToDB();
+    await User.findByIdAndDelete(id);
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to delete user!");
+  }
+
+  revalidatePath("/homeboard/users");
 };
 
 export const addProblem = async (formData) => {
-  const { title, desc, price, stock, color, size } =
+  const { title, desc, cat, step, img, level } =
     Object.fromEntries(formData);
 
   try {
-    connectToDB();
+    await connectToDB();
 
     const newProblem = new Problem({
       title,
       desc,
-      price,
-      stock,
-      color,
-      size,
+      cat,
+      step,
+      img,
+      level,
     });
 
     await newProblem.save();
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to create product!");
+    throw new Error("Failed to create problem!");
   }
 
   revalidatePath("/homeboard/problem");
@@ -96,19 +109,19 @@ export const addProblem = async (formData) => {
 };
 
 export const updateProblem = async (formData) => {
-  const { id, title, desc, price, stock, color, size } =
+  const { id, title, desc, cat, step, img, level } =
     Object.fromEntries(formData);
 
   try {
-    connectToDB();
+    await connectToDB();
 
     const updateFields = {
       title,
       desc,
-      price,
-      stock,
-      color,
-      size,
+      cat,
+      step,
+      img,
+      level,
     };
 
     Object.keys(updateFields).forEach(
@@ -119,36 +132,22 @@ export const updateProblem = async (formData) => {
     await Problem.findByIdAndUpdate(id, updateFields);
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to update product!");
+    throw new Error("Failed to update problem!");
   }
 
   revalidatePath("/homeboard/problem");
   redirect("/homeboard/problem");
 };
 
-export const deleteUser = async (formData) => {
-  const { id } = Object.fromEntries(formData);
-
-  try {
-    connectToDB();
-    await User.findByIdAndDelete(id);
-  } catch (err) {
-    console.log(err);
-    throw new Error("Failed to delete user!");
-  }
-
-  revalidatePath("/homeboard/problem");
-};
-
 export const deleteProblem = async (formData) => {
   const { id } = Object.fromEntries(formData);
 
   try {
-    connectToDB();
+    await connectToDB();
     await Problem.findByIdAndDelete(id);
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to delete product!");
+    throw new Error("Failed to delete problem!");
   }
 
   revalidatePath("/homeboard/problem");

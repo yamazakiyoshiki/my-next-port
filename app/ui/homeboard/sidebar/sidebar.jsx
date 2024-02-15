@@ -4,74 +4,68 @@ import styles from "./sidebar.module.css";
 import {
   MdDashboard,
   MdSupervisedUserCircle,
-  MdShoppingBag,
-  MdAttachMoney,
-  MdWork,
   MdAnalytics,
   MdPeople,
   MdOutlineSettings,
   MdHelpCenter,
   MdLogout,
+  MdCreateNewFolder ,
+  MdOutlineMenuBook,
 } from "react-icons/md";
 // import { auth, signOut } from "@/app/auth";
 
 const menuItems = [
   {
-    title: "Pages",
+    title: "ページ",
     list: [
       {
-        title: "Homeboard",
+        title: "ホーム",
         path: "/homeboard",
         icon: <MdDashboard />,
       },
       {
-        title: "Users",
+        title: "ユーザー",
         path: "/homeboard/users",
         icon: <MdSupervisedUserCircle />,
       },
       {
-        title: "Problems",
+        title: "問題を解く",
         path: "/homeboard/problems",
-        icon: <MdShoppingBag />,
+        icon: <MdOutlineMenuBook />,
       },
       {
-        title: "Transactions",
-        path: "/dashboard/transactions",
-        icon: <MdAttachMoney />,
+        title: "問題を作る",
+        path: "/homeboard/transactions",
+        icon: <MdCreateNewFolder />,
       },
     ],
   },
   {
-    title: "Analytics",
+    title: "分析",
     list: [
       {
-        title: "Revenue",
-        path: "/dashboard/revenue",
-        icon: <MdWork />,
-      },
-      {
-        title: "Reports",
-        path: "/dashboard/reports",
+        title: "レポート",
+        path: "/homeboard/reports",
         icon: <MdAnalytics />,
       },
       {
-        title: "Teams",
-        path: "/dashboard/teams",
+        title: "チーム",
+        path: "/homeboard/teams",
         icon: <MdPeople />,
       },
     ],
   },
   {
-    title: "User",
+    title: "ユーザー",
     list: [
       {
-        title: "Settings",
-        path: "/dashboard/settings",
+        title: "設定",
+        path: "/homeboard/settings",
         icon: <MdOutlineSettings />,
       },
       {
-        title: "Help",
-        path: "/dashboard/help",
+        title: "ヘルプ",
+        path: "/homeboard/help",
         icon: <MdHelpCenter />,
       },
     ],
@@ -91,8 +85,8 @@ const Sidebar =  () => {
           height="50"
         />
         <div className={styles.userDetail}>
-          <span className={styles.username}>山崎</span>
-          <span className={styles.userTitle}>Administrator</span>
+          <span className={styles.username}>山崎 佳季</span>
+          <span className={styles.userTitle}>認証済み</span>
         </div>
       </div>
       <ul className={styles.list}>
@@ -110,7 +104,7 @@ const Sidebar =  () => {
       >
         <button className={styles.logout}>
           <MdLogout />
-          Logout
+          ログアウト
         </button>
       </form>
     </div>

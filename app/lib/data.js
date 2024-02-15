@@ -38,15 +38,15 @@ export const fetchProblems = async (q, page) => {
   const ITEM_PER_PAGE = 2;
 
   try {
-    connectToDB();
+    await connectToDB();
     const count = await Problem.find({ title: { $regex: regex } }).count();
     const problems = await Problem.find({ title: { $regex: regex } })
       .limit(ITEM_PER_PAGE)
       .skip(ITEM_PER_PAGE * (page - 1));
-    return { count, products };
+    return { count, problems };
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to fetch products!");
+    throw new Error("Failed to fetch problems!");
   }
 };
 
@@ -57,7 +57,7 @@ export const fetchProblem = async (id) => {
     return problem;
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to fetch product!");
+    throw new Error("Failed to fetch problem!");
   }
 };
 
@@ -68,18 +68,18 @@ export const cards = [
     id: 1,
     title: "Total Users",
     number: 10.928,
-    change: 12,
+    change: "12%",
   },
   {
     id: 2,
-    title: "Stock",
+    title: "Problems",
     number: 8.236,
-    change: -2,
+    change: "23%",
   },
   {
     id: 3,
-    title: "Revenue",
+    title: "Height Score",
     number: 6.642,
-    change: 18,
+    change: "18%",
   },
 ];

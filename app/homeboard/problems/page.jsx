@@ -14,20 +14,20 @@ const ProblemsPage = async ({ searchParams }) => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <Search placeholder="Search for a product..." />
-        <Link href="/dashboard/products/add">
-          <button className={styles.addButton}>Add New</button>
+        <Search placeholder="問題を検索..." />
+        <Link href="/homeboard/problems/add">
+          <button className={styles.addButton}>新規作成</button>
         </Link>
       </div>
       <table className={styles.table}>
         <thead>
           <tr>
-            <td>Title</td>
-            <td>Description</td>
-            <td>Price</td>
-            <td>Created At</td>
-            <td>Stock</td>
-            <td>Action</td>
+            <td>タイトル</td>
+            <td>詳細</td>
+            <td>レベル</td>
+            <td>作成日</td>
+            <td>ステップ数</td>
+            <td>tesuto</td>
           </tr>
         </thead>
         <tbody>
@@ -46,20 +46,20 @@ const ProblemsPage = async ({ searchParams }) => {
                 </div>
               </td>
               <td>{problem.desc}</td>
-              <td>${problem.price}</td>
+              <td>{problem.level}</td>
               <td>{problem.createdAt?.toString().slice(4, 16)}</td>
-              <td>{problem.stock}</td>
+              <td>{problem.step}</td>
               <td>
                 <div className={styles.buttons}>
                   <Link href={`/homeboard/problems/${problem.id}`}>
                     <button className={`${styles.button} ${styles.view}`}>
-                      View
+                      詳細
                     </button>
                   </Link>
                   <form action={deleteProblem}>
                     <input type="hidden" name="id" value={problem.id} />
                     <button className={`${styles.button} ${styles.delete}`}>
-                      Delete
+                      消去
                     </button>
                   </form>
                 </div>

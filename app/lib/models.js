@@ -50,12 +50,11 @@ const problemSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    price: {
-      type: Number,
+    cat: {
+      type: String,
       required: true,
-      min: 0,
     },
-    stock: {
+    step: {
       type: Number,
       required: true,
       min: 0,
@@ -63,16 +62,13 @@ const problemSchema = new mongoose.Schema(
     img: {
       type: String,
     },
-    color: {
+    level: {
       type: String,
-    },
-    size: {
-      type: String,
+      required: true,
     },
   },
   { timestamps: true }
 );
 
 export const User = mongoose.models.User || mongoose.model("User", userSchema);
-export const Problem =
-  mongoose.models.Problem || mongoose.model("Problem", problemSchema);
+export const Problem = mongoose.models.Problem || mongoose.model("Problem", problemSchema);

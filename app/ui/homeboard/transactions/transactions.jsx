@@ -4,7 +4,7 @@ import styles from './transactions.module.css'
 const Transactions = () => {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>最新の取引</h2>
+      <h2 className={styles.title}>最新のスコア</h2>
       <table className={styles.table}>
         <thead>
           <tr>
@@ -30,11 +30,11 @@ const Transactions = () => {
           </td>
           <td>
             <span className={`${styles.status} ${styles.pending}`}>
-              Pending
+              ゴールド
             </span>
           </td>
-          <td>14.02.2024</td>
-          <td>¥13,000</td>
+          <td>2023.12.23</td>
+          <td>18,000</td>
         </tr>
           <tr>
             <td>
@@ -51,11 +51,11 @@ const Transactions = () => {
           </td>
           <td>
             <span className={`${styles.status} ${styles.done}`}>
-              Done
+              シルバー
             </span>
           </td>
-          <td>14.02.2024</td>
-          <td>¥13,000</td>
+          <td>2023.12.20</td>
+          <td>13,000</td>
         </tr>
           <tr>
             <td>
@@ -72,11 +72,11 @@ const Transactions = () => {
           </td>
           <td>
             <span className={`${styles.status} ${styles.cancelled}`}>
-              Cancelled
+              ブロンズ
             </span>
           </td>
-          <td>14.02.2024</td>
-          <td>¥13,000</td>
+          <td>2023.12.25</td>
+          <td>12,000</td>
         </tr>
       </tbody>
     </table>

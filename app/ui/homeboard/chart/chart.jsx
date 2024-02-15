@@ -6,38 +6,66 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } f
 const data = [
   {
     name: "Sun",
-    visit: 4000,
-    click: 2400,
+    javascript: 300,
+    typescript: 400,
+    react: 344,
+    vue: 100,
+    nextJs: 120,
+    nuxtJs: 90,
   },
   {
     name: "Mon",
-    visit: 3000,
-    click: 1398,
+    javascript: 600,
+    typescript: 398,
+    react: 544,
+    vue: 300,
+    nextJs: 200,
+    nuxtJs: 130,
   },
   {
     name: "Tue",
-    visit: 2000,
-    click: 3800,
+    javascript: 300,
+    typescript: 800,
+    react: 644,
+    vue: 100,
+    nextJs: 590,
+    nuxtJs: 200,
   },
   {
     name: "Wed",
-    visit: 2780,
-    click: 3908,
+    javascript: 780,
+    typescript: 908,
+    react: 1044,
+    vue: 400,
+    nextJs: 590,
+    nuxtJs: 300,
   },
   {
     name: "Thu",
-    visit: 1890,
-    click: 4800,
+    javascript: 890,
+    typescript: 900,
+    react: 844,
+    vue: 400,
+    nextJs: 890,
+    nuxtJs: 300,
   },
   {
     name: "Fri",
-    visit: 2390,
-    click: 3800,
+    javascript: 1100,
+    typescript: 970,
+    react: 600,
+    vue: 200,
+    nextJs: 540,
+    nuxtJs: 300,
   },
   {
     name: "Sat",
-    visit: 3490,
-    click: 4300,
+    javascript: 800,
+    typescript: 1100,
+    react: 850,
+    vue: 500,
+    nextJs: 740,
+    nuxtJs: 400,
   },
 ];
 
@@ -61,8 +89,12 @@ const Chart = () => {
           <YAxis />
           <Tooltip contentStyle={{background:"#151c2c", border:"none"}}/>
           <Legend />
-          <Line type="monotone" dataKey="visit" stroke="#8884d8" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="click" stroke="#82ca9d" strokeDasharray="3 4 5 2" />
+          <Line type="monotone" dataKey="javascript" stroke="#8884d8" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="typescript" stroke="#82ca9d" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="react" stroke="#cac382" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="vue" stroke="#ca8282" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="nextJs" stroke="#b282ca" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="nuxtJs" stroke="#ca9982" strokeDasharray="5 5" />
         </LineChart>
       </ResponsiveContainer>
     </div>
