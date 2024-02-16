@@ -16,18 +16,18 @@ const UsersPage = async ({ searchParams }) => {
       <div className={styles.top}>
         <Search placeholder="Search for a user..." />
         <Link href="/homeboard/users/add">
-          <button className={styles.addButton}>Add New</button>
+          <button className={styles.addButton}>新規追加</button>
         </Link>
       </div>
       <table className={styles.table}>
         <thead>
           <tr>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Created At</td>
-            <td>Role</td>
-            <td>Status</td>
-            <td>Action</td>
+            <td>名前</td>
+            <td>メールアドレス</td>
+            <td>作成日</td>
+            <td>アカウントロール</td>
+            <td>ステータス</td>
+            <td>アクション</td>
           </tr>
         </thead>
         <tbody>
@@ -47,19 +47,19 @@ const UsersPage = async ({ searchParams }) => {
               </td>
               <td>{user.email}</td>
               <td>{user.createdAt?.toString().slice(4, 16)}</td>
-              <td>{user.isAdmin ? "Admin" : "Client"}</td>
+              <td>{user.isAdmin ? "認証済み" : "ゲスト"}</td>
               <td>{user.isActive ? "active" : "passive"}</td>
               <td>
                 <div className={styles.buttons}>
                   <Link href={`/homeboard/users/${user.id}`}>
                     <button className={`${styles.button} ${styles.view}`}>
-                      View
+                      詳細
                     </button>
                   </Link>
                   <form action={deleteUser}>
                     <input type="hidden" name="id" value={(user.id)} />
                     <button className={`${styles.button} ${styles.delete}`}>
-                      Delete
+                      削除
                     </button>
                   </form>
                 </div>

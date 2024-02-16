@@ -18,27 +18,27 @@ const SingleUserPage = async ({ params }) => {
       <div className={styles.formContainer}>
         <form action={updateUser} className={styles.form}>
           <input type="hidden" name="id" value={user.id}/>
-          <label>Username</label>
+          <label>ユーザーネーム</label>
           <input type="text" name="username" placeholder={user.username} />
-          <label>Email</label>
+          <label>メールアドレス</label>
           <input type="email" name="email" placeholder={user.email} />
-          <label>Password</label>
+          <label>パスワード</label>
           <input type="password" name="password" />
-          <label>Phone</label>
+          <label>電話番号</label>
           <input type="text" name="phone" placeholder={user.phone} />
-          <label>Address</label>
+          <label>住所</label>
           <textarea type="text" name="address" placeholder={user.address} />
-          <label>Is Admin?</label>
-          <select name="isAdmin" id="isAdmin">
-            <option value={true} selected={user.isAdmin}>Yes</option>
-            <option value={false} selected={!user.isAdmin}>No</option>
+          <label>認証済み?</label>
+          <select name="isAdmin" id="isAdmin" defaultValue={user.isAdmin.toString()}>
+            <option value={true}>はい</option>
+            <option value={false}>いいえ</option>
           </select>
-          <label>Is Active?</label>
-          <select name="isActive" id="isActive">
-            <option value={true} selected={user.isActive}>Yes</option>
-            <option value={false} selected={!user.isActive}>No</option>
+          <label>ログイン状態?</label>
+          <select name="isActive" id="isActive" defaultValue={user.isActive.toString()}>
+            <option value={true}>はい</option>
+            <option value={false}>いいえ</option>
           </select>
-          <button>Update</button>
+          <button>情報を更新</button>
         </form>
       </div>
     </div>

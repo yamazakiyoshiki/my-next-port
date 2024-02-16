@@ -63,6 +63,14 @@ const problemSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    user: {
+      _id: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: false,
+        ref: 'User'
+      },
+      username: String
+    }
   },
   { timestamps: true }
 );
