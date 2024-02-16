@@ -14,7 +14,7 @@ const UsersPage = async ({ searchParams }) => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <Search placeholder="Search for a user..." />
+        <Search placeholder="ユーザーを検索..." />
         <Link href="/homeboard/users/add">
           <button className={styles.addButton}>新規追加</button>
         </Link>

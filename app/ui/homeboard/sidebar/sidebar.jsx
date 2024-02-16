@@ -13,7 +13,7 @@ import {
   MdOutlineMenuBook,
   MdFormatAlignJustify,
 } from "react-icons/md";
-// import { auth, signOut } from "@/app/auth";
+import { auth, signOut } from "@/app/auth";
 
 const menuItems = [
   {
@@ -78,8 +78,9 @@ const menuItems = [
   },
 ];
 
-const Sidebar =  () => {
-  // const { user } = await auth();
+const Sidebar = async () => {
+  const { user } = await auth();
+  console.log(user);
   return (
     <div className={styles.container}>
       <div className={styles.user}>
@@ -91,7 +92,7 @@ const Sidebar =  () => {
           height="50"
         />
         <div className={styles.userDetail}>
-          <span className={styles.username}>山崎 佳季</span>
+          <span className={styles.username}>{user.username}</span>
           <span className={styles.userTitle}>認証済み</span>
         </div>
       </div>
@@ -106,7 +107,10 @@ const Sidebar =  () => {
         ))}
       </ul>
       <form
-        action=""
+        action={async () => {
+          "use server";
+          await signOut();
+        }}
       >
         <button className={styles.logout}>
           <MdLogout />
