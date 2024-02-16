@@ -6,8 +6,8 @@ const AddProblemPage = () => {
     <div className={styles.container}>
       <form action={addProblem} className={styles.form}>
         <input type="text" placeholder="問題のタイトル" name="title" required />
-        <select name="cat" id="cat">
-          <option value="" disabled selected>問題のカテゴリーを選択</option>
+        <select name="cat" id="cat" defaultValue="des" >
+          <option value="des" disabled>問題のカテゴリーを選択</option>
             <option value="JavaScript">JavaScript</option>
             <option value="TypeScript">TypeScript</option>
             <option value="React">React</option>
@@ -17,8 +17,8 @@ const AddProblemPage = () => {
         </select>
         <input type="number" placeholder="問題のステップ数" name="step" min={0} max={10}required />
         {/* <input type="file" placeholder="完成図" name="img" accept="image/jpeg, image/png" /> */}
-          <select name="level" id="level" required>
-            <option value="" disabled selected>問題のレベルを選択してください</option>
+          <select name="level" id="level" required defaultValue="level">
+            <option value="level" disabled>問題のレベルを選択してください</option>
             <option value="A">A</option>
             <option value="B">B</option>
             <option value="A">C</option>

@@ -25,8 +25,7 @@ const SingleProblemPage = async ({ params }) => {
           {/* <label>完成図</label>
           <input type="file" name="img" placeholder="写真を入れてください" accept="image/jpeg, image/png" /> */}
           <label>難易度</label>
-          <select name="level" id="level">
-            <option value="" disabled selected>{problem.level}</option>
+          <select name="level" id="level" defaultValue={problem.level}>
             <option value="A">A</option>
             <option value="B">B</option>
             <option value="C">C</option>
@@ -38,8 +37,7 @@ const SingleProblemPage = async ({ params }) => {
             placeholder={problem.size || "size"}
           /> */}
           <label>カテゴリー</label>
-          <select name="cat" id="cat">
-            <option value="" disabled selected>{problem.cat}</option>
+          <select name="cat" id="cat" defaultValue={problem.cat}>
             <option value="JavaScript">JavaScript</option>
             <option value="TypeScript">TypeScript</option>
             <option value="React">React</option>
