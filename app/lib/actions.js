@@ -81,17 +81,20 @@ export const deleteUser = async (formData) => {
 };
 
 export const addProblem = async (formData) => {
-  const { title, desc, cat, step, level } =
+  const { title, desc, cat, step, level, username } =
     Object.fromEntries(formData);
   try {
     await connectToDB();
+    const problemUsername = username || "匿名";
     const newProblem = new Problem({
       title,
       desc,
       cat,
       step,
       level,
+      username: problemUsername,
     });
+    console.log(newProblem);
     await newProblem.save();
   } catch (err) {
     console.log(err);
@@ -112,6 +115,7 @@ export const updateProblem = async (formData) => {
       cat,
       step,
       level,
+      username,
     };
     Object.keys(updateFields).forEach(
       (key) =>

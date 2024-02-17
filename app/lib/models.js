@@ -44,7 +44,6 @@ const problemSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-      unique: true,
     },
     desc: {
       type: String,
@@ -63,13 +62,16 @@ const problemSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    user: {
-      _id: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: false,
-        ref: 'User'
-      },
-      username: String
+    // user: {
+    //   _id: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'User'
+    //   },
+    //   username: String,
+    // }
+    username: {
+      type: String,
+      required: false,
     }
   },
   { timestamps: true }

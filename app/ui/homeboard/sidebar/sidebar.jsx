@@ -35,6 +35,11 @@ const menuItems = [
         icon: <MdFormatAlignJustify />,
       },
       {
+        title: "自分の投稿一覧",
+        path: "/homeboard/problems/mypost",
+        icon: <MdFormatAlignJustify />,
+      },
+      {
         title: "問題を解く",
         path: "/homeboard/problems/resolves",
         icon: <MdOutlineMenuBook />,
@@ -54,11 +59,11 @@ const menuItems = [
         path: "/homeboard/reports",
         icon: <MdAnalytics />,
       },
-      {
-        title: "チーム",
-        path: "/homeboard/teams",
-        icon: <MdPeople />,
-      },
+      // {
+      //   title: "チーム",
+      //   path: "/homeboard/teams",
+      //   icon: <MdPeople />,
+      // },
     ],
   },
   {

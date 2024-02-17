@@ -1,7 +1,9 @@
+import { auth } from "@/app/auth";
 import { addProblem } from "@/app/lib/actions";
 import styles from "@/app/ui/homeboard/problems/addProblem/addProblem.module.css";
 
-const AddProblemPage = () => {
+const AddProblemPage = async () => {
+  const { user } = await auth();
   return (
     <div className={styles.container}>
       <form action={addProblem} className={styles.form}>
@@ -15,7 +17,7 @@ const AddProblemPage = () => {
             <option value="Next.js">Next.Js</option>
             <option value="Nuxt.js">Nuxt.Js</option>
         </select>
-        <input type="number" placeholder="問題のステップ数" name="step" min={0} max={10}required />
+        <input type="number" placeholder="問題のステップ数" name="step" min={0} max={10} required />
         {/* <input type="file" placeholder="完成図" name="img" accept="image/jpeg, image/png" /> */}
           <select name="level" id="level" required defaultValue="level">
             <option value="level" disabled>問題のレベルを選択してください</option>
@@ -24,6 +26,7 @@ const AddProblemPage = () => {
             <option value="A">C</option>
           </select>
         {/* <input type="text" placeholder="size" name="size" /> */}
+          <input type="text" id="username" name="username" placeholder={user.username} />
         <textarea
           required
           name="desc"
