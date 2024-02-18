@@ -14,19 +14,17 @@ const AddProblemPage = async () => {
             <option value="TypeScript">TypeScript</option>
             <option value="React">React</option>
             <option value="Vue">Vue</option>
-            <option value="Next.js">Next.Js</option>
-            <option value="Nuxt.js">Nuxt.Js</option>
+            <option value="NextJs">Next.Js</option>
+            <option value="NuxtJs">Nuxt.Js</option>
         </select>
         <input type="number" placeholder="問題のステップ数" name="step" min={0} max={10} required />
-        {/* <input type="file" placeholder="完成図" name="img" accept="image/jpeg, image/png" /> */}
           <select name="level" id="level" required defaultValue="level">
-            <option value="level" disabled>問題のレベルを選択してください</option>
+            <option value="level" disabled>問題のレベルを選択</option>
             <option value="A">A</option>
             <option value="B">B</option>
             <option value="A">C</option>
           </select>
-        {/* <input type="text" placeholder="size" name="size" /> */}
-          <input type="text" id="username" name="username" placeholder={user.username} />
+          <input type="text" id="username" name="username" placeholder={`投稿者(例)   ${user.username}`}/>
         <textarea
           required
           name="desc"

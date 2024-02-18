@@ -6,9 +6,10 @@ import { connectToDB } from "./utils";
 import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
 import { signIn } from "../auth";
+import { problemsCatCounter } from "./services/problemsService";
 
 export const addUser = async (formData) => {
-  const { username, email, password, phone, address, isAdmin, isActive } =
+  const { username, email, password, phone, address, desc, isAdmin, isActive } =
     Object.fromEntries(formData);
 
   try {
@@ -22,6 +23,7 @@ export const addUser = async (formData) => {
       password: hashedPassword,
       phone,
       address,
+      desc,
       isAdmin,
       isActive,
     });
@@ -37,7 +39,7 @@ export const addUser = async (formData) => {
 };
 
 export const updateUser = async (formData) => {
-  const { id, username, email, password, phone, address, isAdmin, isActive } =
+  const { id, username, email, password, phone, address, desc, isAdmin, isActive } =
     Object.fromEntries(formData);
 
   try {
@@ -49,6 +51,7 @@ export const updateUser = async (formData) => {
       password,
       phone,
       address,
+      desc,
       isAdmin,
       isActive,
     };
@@ -141,6 +144,21 @@ export const deleteProblem = async (formData) => {
   }
   revalidatePath("/homeboard/problems");
 };
+
+export const countProblemCat = async () => {
+  try {
+    await connectToDB();
+    const counts = await problemsCatCounter();
+    const categoryCounts = counts.reduce((acc, {_id, count}) => {
+      acc[_id] = count;
+      return acc;
+    }, {});
+    console.log(categoryCounts);
+    return categoryCounts;
+  } catch (err) {
+    console.error("Failed count problems by category!", err);
+    }
+  };
 
 export const authenticate = async (prevState, formData) => {
   const { username, password } = Object.fromEntries(formData);

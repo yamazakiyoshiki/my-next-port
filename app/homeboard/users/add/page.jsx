@@ -14,6 +14,12 @@ const AddUserPage = () => {
           required
         />
         <input type="phone" placeholder="電話番号" name="phone" />
+        <textarea
+          name="address"
+          id="address"
+          rows="2"
+          placeholder="住所"
+        />
         <select name="isAdmin" id="isAdmin">
           <option value={false}>
             認証済み?
@@ -29,12 +35,12 @@ const AddUserPage = () => {
           <option value={false}>いいえ</option>
         </select>
         <textarea
-          name="address"
-          id="address"
-          rows="16"
-          placeholder="住所"
-        ></textarea>
-        <button type="submit">新規追加</button>
+        name="desc"
+        id="desc"
+        rows="2"
+        placeholder="自己紹介"
+        />
+        <button type="submit">新規登録</button>
       </form>
     </div>
   );

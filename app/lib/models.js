@@ -35,6 +35,9 @@ const userSchema = new mongoose.Schema(
     address: {
       type: String,
     },
+    desc: {
+      type: String,
+    }
   },
   { timestamps: true }
 );

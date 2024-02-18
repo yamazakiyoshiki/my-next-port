@@ -1,6 +1,7 @@
 import Image from "next/image";
 import MenuLink from "./menuLink/menuLink";
 import styles from "./sidebar.module.css";
+import { auth, signOut } from "@/app/auth";
 import {
   MdDashboard,
   MdSupervisedUserCircle,
@@ -13,7 +14,7 @@ import {
   MdOutlineMenuBook,
   MdFormatAlignJustify,
 } from "react-icons/md";
-import { auth, signOut } from "@/app/auth";
+import Link from "next/link";
 
 const menuItems = [
   {
@@ -69,11 +70,11 @@ const menuItems = [
   {
     title: "ユーザー",
     list: [
-      {
-        title: "設定",
-        path: "/homeboard/settings",
-        icon: <MdOutlineSettings />,
-      },
+      // {
+      //   title: "設定",
+      //   path: "/homeboard/settings",
+      //   icon: <MdOutlineSettings />,
+      // },
       {
         title: "使い方",
         path: "/homeboard/help",
@@ -85,7 +86,6 @@ const menuItems = [
 
 const Sidebar = async () => {
   const { user } = await auth();
-  // console.log(user);
   return (
     <div className={styles.container}>
       <div className={styles.user}>
@@ -98,7 +98,9 @@ const Sidebar = async () => {
         />
         <div className={styles.userDetail}>
           <span className={styles.username}>{user.username}</span>
-          <span className={styles.userTitle}>認証済み</span>
+          <span className={styles.userTitle}>
+            {user.isAdmin? "認証済み" : "ゲストユーザー"}
+          </span>
         </div>
       </div>
       <ul className={styles.list}>
@@ -111,6 +113,12 @@ const Sidebar = async () => {
           </li>
         ))}
       </ul>
+      <div>
+        <Link href={`/homeboard/users/${user.id}`} className={styles.setting}>
+          <MdOutlineSettings/>
+          ユーザー設定
+        </Link>
+      </div>
       <form
         action={async () => {
           "use server";

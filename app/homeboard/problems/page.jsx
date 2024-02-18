@@ -24,7 +24,7 @@ const ProblemsPage = async ({ searchParams }) => {
             <td>詳細</td>
             <td>レベル</td>
             <td>作成日</td>
-            <td>ステップ数</td>
+            <td>投稿者</td>
             <td>編集</td>
           </tr>
         </thead>
@@ -33,21 +33,15 @@ const ProblemsPage = async ({ searchParams }) => {
             <tr key={problem.id}>
               <td>
                 <div className={styles.problem}>
-                  {/* <Image
-                    src={problem.img || "/noproduct.jpg"}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className={styles.problemImage}
-                  /> */}
-                  {problem.title}
+                  {problem.title > 20 ?
+                  `${problem.title.substring(0, 20)}...`:problem.title}
                 </div>
               </td>
               <td>{problem.desc.length >
                 20 ? `${problem.desc.substring(0, 20)}...` : problem.desc}</td>
               <td>{problem.level}</td>
               <td>{problem.createdAt?.toString().slice(4, 16)}</td>
-              <td>{problem.step}ステップ</td>
+              <td>{problem.username}</td>
               <td>
                 <div className={styles.buttons}>
                   <Link href={`/homeboard/problems/${problem.id}`}>

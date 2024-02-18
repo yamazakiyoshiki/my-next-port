@@ -38,6 +38,8 @@ const SingleUserPage = async ({ params }) => {
             <option value={true}>はい</option>
             <option value={false}>いいえ</option>
           </select>
+          <label>自己紹介</label>
+          <textarea type="text" name="desc" placeholder={user.desc}/>
           <button>情報を更新</button>
         </form>
       </div>

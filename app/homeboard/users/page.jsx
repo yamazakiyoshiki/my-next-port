@@ -51,17 +51,11 @@ const UsersPage = async ({ searchParams }) => {
               <td>{user.isActive ? "active" : "passive"}</td>
               <td>
                 <div className={styles.buttons}>
-                  <Link href={`/homeboard/users/${user.id}`}>
+                  <Link href={`/homeboard/users/${user.id}/profile`}>
                     <button className={`${styles.button} ${styles.view}`}>
-                      詳細
+                      プロフィール
                     </button>
                   </Link>
-                  <form action={deleteUser}>
-                    <input type="hidden" name="id" value={(user.id)} />
-                    <button className={`${styles.button} ${styles.delete}`}>
-                      削除
-                    </button>
-                  </form>
                 </div>
               </td>
             </tr>

@@ -1,78 +1,42 @@
 "use client"
-
+import { countProblemCat } from '@/app/lib/actions';
 import styles from './chart.module.css'
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useEffect, useState } from 'react';
 
-const data = [
-  {
-    name: "Sun",
-    javascript: 300,
-    typescript: 400,
-    react: 344,
-    vue: 100,
-    nextJs: 120,
-    nuxtJs: 90,
-  },
-  {
-    name: "Mon",
-    javascript: 600,
-    typescript: 398,
-    react: 544,
-    vue: 300,
-    nextJs: 200,
-    nuxtJs: 130,
-  },
-  {
-    name: "Tue",
-    javascript: 300,
-    typescript: 800,
-    react: 644,
-    vue: 100,
-    nextJs: 590,
-    nuxtJs: 200,
-  },
-  {
-    name: "Wed",
-    javascript: 780,
-    typescript: 908,
-    react: 1044,
-    vue: 400,
-    nextJs: 590,
-    nuxtJs: 300,
-  },
-  {
-    name: "Thu",
-    javascript: 890,
-    typescript: 900,
-    react: 844,
-    vue: 400,
-    nextJs: 890,
-    nuxtJs: 300,
-  },
-  {
-    name: "Fri",
-    javascript: 1100,
-    typescript: 970,
-    react: 600,
-    vue: 200,
-    nextJs: 540,
-    nuxtJs: 300,
-  },
-  {
-    name: "Sat",
-    javascript: 800,
-    typescript: 1100,
-    react: 850,
-    vue: 500,
-    nextJs: 740,
-    nuxtJs: 400,
-  },
-];
+const getWeekdaysStartingToday = () => {
+  const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const today = new Date().getDay(); // 今日の曜日のインデックス (0-6)
+  return [...weekdays.slice(today), ...weekdays.slice(0, today)];
+};
 
-const Chart = () => {
+const Chart =  () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const counts = await countProblemCat();
+        const weekdays = getWeekdaysStartingToday();
+        const chartData = weekdays.map(day => ({
+          name: day,
+          JavaScript: counts.JavaScript || 0,
+          TypeScript: counts.TypeScript || 0,
+          React: counts.React || 0,
+          Vue: counts.Vue || 0,
+          NextJs: counts.NextJs || 0,
+          NuxtJs: counts.NuxtJs || 0,
+        }));
+        setData(chartData);
+      } catch (err) {
+        console.error("Failed fetching chartData!", err);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Weekly Recap</h2>
+      <h2 className={styles.title}>今週のジャンルトレンド</h2>
       <ResponsiveContainer width="100%" height="90%">
         <LineChart
           width={500}
@@ -89,12 +53,12 @@ const Chart = () => {
           <YAxis />
           <Tooltip contentStyle={{background:"#151c2c", border:"none"}}/>
           <Legend />
-          <Line type="monotone" dataKey="javascript" stroke="#8884d8" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="typescript" stroke="#82ca9d" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="react" stroke="#cac382" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="vue" stroke="#ca8282" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="nextJs" stroke="#b282ca" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="nuxtJs" stroke="#ca9982" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="JavaScript" stroke="#8884d8" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="TypeScript" stroke="#82ca9d" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="React" stroke="#cac382" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="Vue" stroke="#ca8282" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="NextJs" stroke="#b282ca" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="NuxtJs" stroke="#ca9982" strokeDasharray="5 5" />
         </LineChart>
       </ResponsiveContainer>
     </div>

@@ -22,28 +22,20 @@ const SingleProblemPage = async ({ params }) => {
           <input type="text" name="title" placeholder={problem.title} />
           <label>ステップ数</label>
           <input type="number" name="step" placeholder={problem.step} max="10" />
-          {/* <label>完成図</label>
-          <input type="file" name="img" placeholder="写真を入れてください" accept="image/jpeg, image/png" /> */}
           <label>難易度</label>
           <select name="level" id="level" defaultValue={problem.level}>
             <option value="A">A</option>
             <option value="B">B</option>
             <option value="C">C</option>
           </select>
-          {/* <label>Size</label>
-          <textarea
-            type="text"
-            name="size"
-            placeholder={problem.size || "size"}
-          /> */}
           <label>カテゴリー</label>
           <select name="cat" id="cat" defaultValue={problem.cat}>
             <option value="JavaScript">JavaScript</option>
             <option value="TypeScript">TypeScript</option>
             <option value="React">React</option>
             <option value="Vue">Vue</option>
-            <option value="Next.js">Next.Js</option>
-            <option value="Nuxt.js">Nuxt.Js</option>
+            <option value="NextJs">Next.Js</option>
+            <option value="NuxtJs">Nuxt.Js</option>
           </select>
           <label>問題の詳細</label>
           <textarea
