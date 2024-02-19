@@ -31,12 +31,13 @@ export const addUser = async (formData) => {
     await newUser.save();
   } catch (err) {
     console.log(err);
-    throw new Error("Failed to create user!");
+    throw new Error("Failed to add user!");
   }
 
   revalidatePath("/homeboard/users");
   redirect("/homeboard/users");
 };
+
 
 export const updateUser = async (formData) => {
   const { id, username, email, password, phone, address, desc, isAdmin, isActive } =
@@ -160,12 +161,43 @@ export const countProblemCat = async () => {
     }
   };
 
+export const createAccount = async (prevState, formData) => {
+  const { username, email, password, phone, address, desc, isAdmin, isActive } =
+    Object.fromEntries(formData);
+
+  try {
+    await connectToDB();
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    const newUser = new User({
+      username,
+      email,
+      password: hashedPassword,
+      phone,
+      address,
+      desc,
+      isAdmin,
+      isActive,
+    });
+
+    await newUser.save();
+  } catch (err) {
+    console.log(err);
+    return "FailedSignUp";
+  }
+
+  revalidatePath("/login");
+  redirect("/login");
+};
+
 export const authenticate = async (prevState, formData) => {
   const { username, password } = Object.fromEntries(formData);
+
   try {
     await signIn("credentials", { username, password });
   } catch (err) {
-    if (err.message.includes("CredentialsSignIn")) {
+    if (err.message.includes("CredentialsSignin")) {
       return "Wrong Credentials";
     }
     throw err;

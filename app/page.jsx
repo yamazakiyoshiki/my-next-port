@@ -1,6 +1,10 @@
+import CreateAccountForm from "./ui/login/createAccountForm/createAccountForm"
+
 const Homepage = () => {
   return (
-    <div>Homepage</div>
+    <div>
+      <CreateAccountForm/>
+    </div>
   )
 }
 

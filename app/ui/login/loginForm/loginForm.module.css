@@ -29,3 +29,7 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
+.form p{
+  color: var(--err);
+}

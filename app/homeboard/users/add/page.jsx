@@ -1,10 +1,9 @@
-import { addUser } from "@/app/lib/actions";
 import styles from "@/app/ui/homeboard/users/addUser/addUser.module.css";
 
 const AddUserPage = () => {
   return (
     <div className={styles.container}>
-      <form action={addUser} className={styles.form}>
+      <form action="" className={styles.form}>
         <input type="text" placeholder="ユーザーネーム" name="username" required />
         <input type="email" placeholder="メールアドレス" name="email" required />
         <input

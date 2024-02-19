@@ -1,4 +1,4 @@
-import { deleteUser } from "@/app/lib/actions";
+import { auth } from "@/app/auth";
 import { fetchUsers } from "@/app/lib/data";
 import Pagination from "@/app/ui/homeboard/pagination/pagination";
 import Search from "@/app/ui/homeboard/search/search";
@@ -10,14 +10,15 @@ const UsersPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
   const page = searchParams?.page || 1;
   const { count, users } = await fetchUsers(q, page);
+  const authUser = await auth();
 
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <Search placeholder="ユーザーを検索..." />
-        <Link href="/homeboard/users/add">
+        {/* <Link href="/homeboard/users/add">
           <button className={styles.addButton}>新規追加</button>
-        </Link>
+        </Link> */}
       </div>
       <table className={styles.table}>
         <thead>
@@ -31,7 +32,7 @@ const UsersPage = async ({ searchParams }) => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {users.filter(user => user.id !== authUser.id).map((user) => (
             <tr key={user.id}>
               <td>
                 <div className={styles.user}>
