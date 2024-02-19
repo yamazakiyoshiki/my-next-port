@@ -57,7 +57,7 @@ const menuItems = [
     list: [
       {
         title: "レポート",
-        path: "/homeboard/reports",
+        path: "#",
         icon: <MdAnalytics />,
       },
       // {

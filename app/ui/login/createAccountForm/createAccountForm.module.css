@@ -5,8 +5,25 @@
   margin-top: 20px;
 }
 
-.container h2{
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
+}
+
+.container h2{
+  color: #b266cb;
+}
+
+.loginButton{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 10%;
+  color: var(--text);
+  background-color: rgba(29, 114, 133, 0.748);
+  text-align: center;
 }
 
 .container p{
@@ -14,7 +31,7 @@
   justify-content: center;
   padding: 20px;
   margin-bottom: 20px;
-  color: var(--err);
+  color: rosybrown;
 }
 
 .form {
