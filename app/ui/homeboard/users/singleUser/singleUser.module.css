@@ -58,3 +58,10 @@
   cursor: pointer;
   margin-top: 20px;
 }
+
+.readonly {
+  background-color: transparent;
+  color: #000;
+  cursor: default;
+  outline: none;
+}

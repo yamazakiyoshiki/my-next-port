@@ -61,6 +61,33 @@ export const fetchProblem = async (id) => {
   }
 };
 
+export const fetchUserPosts = async (q, page, username) => {
+  console.log(q);
+  const regex = new RegExp(q, "i");
+
+  const ITEM_PER_PAGE = 2;
+
+  try {
+    await connectToDB();
+    const count = await Problem.find({
+      title: { $regex: regex },
+      username: username
+    }).count();
+    const posts = await Problem.find({
+      title: { $regex: regex },
+      username: username
+    })
+    .limit(ITEM_PER_PAGE)
+    .skip(ITEM_PER_PAGE * (page - 1));
+
+    return { count, posts };
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to fetch user's posts!");
+  }
+};
+
+
 // DUMMY DATA
 
 export const cards = [

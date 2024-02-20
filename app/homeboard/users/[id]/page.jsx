@@ -28,15 +28,17 @@ const SingleUserPage = async ({ params }) => {
           <input type="text" name="phone" placeholder={user.phone} />
           <label>住所</label>
           <textarea type="text" name="address" placeholder={user.address} />
-          <label>認証済み?</label>
-          <select name="isAdmin" id="isAdmin" defaultValue={user.isAdmin.toString()}>
-            <option value={true}>はい</option>
-            <option value={false}>いいえ</option>
-          </select>
-          <label>ログイン状態?</label>
-          <select name="isActive" id="isActive" defaultValue={user.isActive.toString()}>
-            <option value={true}>はい</option>
-            <option value={false}>いいえ</option>
+          <label>認証</label>
+          <input
+          type="text"
+          name="isAdimin"
+          placeholder={user.isAdmin?"ログインユーザー" : "ゲストユーザー"}
+          className={styles.readonly}
+          readOnly />
+          <label>ログイン頻度</label>
+          <select name="isActive" id="isActive" defaultValue={user.isActive.toString()? "多い" : "少ない"}>
+            <option value={true}>多い</option>
+            <option value={false}>少ない</option>
           </select>
           <label>自己紹介</label>
           <textarea type="text" name="desc" placeholder={user.desc}/>

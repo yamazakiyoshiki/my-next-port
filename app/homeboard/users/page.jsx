@@ -25,9 +25,9 @@ const UsersPage = async ({ searchParams }) => {
           <tr>
             <td>名前</td>
             <td>メールアドレス</td>
-            <td>作成日</td>
+            <td>開設日</td>
             <td>アカウントロール</td>
-            <td>ステータス</td>
+            <td>ログイン頻度</td>
             <td>アクション</td>
           </tr>
         </thead>
@@ -49,7 +49,7 @@ const UsersPage = async ({ searchParams }) => {
               <td>{user.email}</td>
               <td>{user.createdAt?.toString().slice(4, 16)}</td>
               <td>{user.isAdmin ? "認証済み" : "ゲスト"}</td>
-              <td>{user.isActive ? "active" : "passive"}</td>
+              <td>{user.isActive ? "多い" : "少ない"}</td>
               <td>
                 <div className={styles.buttons}>
                   <Link href={`/homeboard/users/${user.id}/profile`}>
