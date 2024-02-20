@@ -1,3 +1,4 @@
+import { MdLeaderboard, MdOutlineHelp, MdSupervisedUserCircle } from "react-icons/md";
 import { Problem, User } from "./models";
 import { connectToDB } from "./utils";
 
@@ -93,18 +94,21 @@ export const fetchUserPosts = async (q, page, username) => {
 export const cards = [
   {
     id: 1,
+    icon: <MdSupervisedUserCircle size={24}/>,
     title: "合計ユーザー",
     number: "1,523",
     change: "12%",
   },
   {
     id: 2,
+    icon: <MdOutlineHelp size={24}/>,
     title: "合計問題数",
     number: "8,342",
     change: "23%",
   },
   {
     id: 3,
+    icon: <MdLeaderboard size={24}/>,
     title: "今週のベストスコア",
     number: "18,000",
     change: "18%",

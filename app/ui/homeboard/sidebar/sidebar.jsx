@@ -13,6 +13,9 @@ import {
   MdCreateNewFolder ,
   MdOutlineMenuBook,
   MdFormatAlignJustify,
+  MdLibraryAdd,
+  MdLibraryAddCheck,
+  MdLibraryBooks,
 } from "react-icons/md";
 import Link from "next/link";
 
@@ -38,7 +41,7 @@ const menuItems = [
       {
         title: "自分の投稿一覧",
         path: "/homeboard/problems/mypost",
-        icon: <MdFormatAlignJustify />,
+        icon: <MdLibraryBooks />,
       },
       {
         title: "問題を解く",
@@ -48,7 +51,7 @@ const menuItems = [
       {
         title: "問題を作る",
         path: "/homeboard/problems/add",
-        icon: <MdCreateNewFolder />,
+        icon: <MdLibraryAdd />,
       },
     ],
   },
