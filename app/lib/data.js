@@ -105,7 +105,7 @@ export const cards = [
   },
   {
     id: 3,
-    title: "Height Score",
+    title: "今週のベストスコア",
     number: "18,000",
     change: "18%",
   },

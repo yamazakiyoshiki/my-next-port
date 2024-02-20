@@ -11,7 +11,7 @@ const SingleProblemPage = async ({ params }) => {
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
-          <Image src="/noavatar.png" alt="" fill />
+          <Image src="/noproblem.jpg" alt="" fill />
         </div>
         {problem.title}
       </div>

@@ -39,10 +39,21 @@
 
 .card h2{
   text-align: center;
+  align-items: center;
 }
 
-.card span{
+.card .icon{
+  margin-right: 10px;
+}
+
+.desc{
+  display: inline-block;
   width: 100%;
-  text-align: center;
-  width: 100%;
+  white-space: pre-wrap;
+  text-align: initial;
+  margin: 5px;
+}
+
+.user{
+  height: 50%;
 }

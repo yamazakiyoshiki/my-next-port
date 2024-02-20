@@ -25,7 +25,7 @@ const HomeContents = () => {
                 height={40}
                 className={styles.userImage}
               />
-                大西浩介
+                kouki1223
               </div>
           </td>
           <td>
@@ -46,7 +46,7 @@ const HomeContents = () => {
                 height={40}
                 className={styles.userImage}
               />
-                山口健太郎
+                yura3423
               </div>
           </td>
           <td>
@@ -67,7 +67,7 @@ const HomeContents = () => {
                 height={40}
                 className={styles.userImage}
               />
-                桜庭雄二
+                十文字翔平
               </div>
           </td>
           <td>

@@ -39,7 +39,13 @@ const ProfilePage = async ({params}) => {
           className={styles.readonly}
           readOnly />
           <label>自己紹介</label>
-          <textarea type="text" name="desc" placeholder={user.desc} className={styles.readonly}/>
+          <textarea
+          type="text"
+          name="desc"
+          placeholder={user.desc}
+          className={styles.readonly}
+          readOnly
+          />
           <Link href="/homeboard/users">
           <button>戻る</button>
           </Link>
