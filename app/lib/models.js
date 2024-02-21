@@ -65,13 +65,6 @@ const problemSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    // user: {
-    //   _id: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'User'
-    //   },
-    //   username: String,
-    // }
     username: {
       type: String,
       required: false,

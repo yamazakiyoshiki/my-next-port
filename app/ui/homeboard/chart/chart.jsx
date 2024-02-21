@@ -1,8 +1,9 @@
 "use client"
+
 import { countProblemCat } from '@/app/lib/actions';
 import styles from './chart.module.css'
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useEffect, useState } from 'react';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const getWeekdaysStartingToday = () => {
   const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -34,6 +35,7 @@ const Chart =  () => {
     };
     fetchData();
   }, []);
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>今週のジャンルトレンド</h2>
@@ -62,7 +64,7 @@ const Chart =  () => {
         </LineChart>
       </ResponsiveContainer>
     </div>
-  )
-}
+  );
+};
 
-export default Chart
+export default Chart;

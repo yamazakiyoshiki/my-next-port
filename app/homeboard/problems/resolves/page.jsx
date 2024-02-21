@@ -1,7 +1,7 @@
-import styles from "@/app/ui/homeboard/problems/resolveProblem/resolves.module.css"
+import { fetchProblems } from "@/app/lib/data";
+import styles from "@/app/ui/homeboard/problems/resolveProblem/resolves.module.css";
 import Search from "@/app/ui/homeboard/search/search";
 import Pagination from "@/app/ui/homeboard/pagination/pagination";
-import { fetchProblems } from "@/app/lib/data";
 import Link from "next/link";
 
 const ResolvesProblemPage = async ({searchParams}) => {
@@ -54,4 +54,4 @@ const ResolvesProblemPage = async ({searchParams}) => {
   )
 }
 
-export default ResolvesProblemPage
+export default ResolvesProblemPage;

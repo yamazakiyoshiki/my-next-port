@@ -1,4 +1,4 @@
-import styles from './card.module.css'
+import styles from './card.module.css';
 
 const Card = ({item}) => {
   return (
@@ -12,7 +12,7 @@ const Card = ({item}) => {
         </span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

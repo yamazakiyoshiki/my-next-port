@@ -1,7 +1,7 @@
-import Navbar from "../ui/homeboard/navbar/navbar"
 import Sidebar from "../ui/homeboard/sidebar/sidebar"
-import styles from "../ui/homeboard/homeboard.module.css"
+import Navbar from "../ui/homeboard/navbar/navbar"
 import Footer from "../ui/homeboard/footer/footer"
+import styles from "../ui/homeboard/homeboard.module.css"
 
 const Layout = ({children}) => {
   return (
@@ -15,7 +15,7 @@ const Layout = ({children}) => {
         <Footer/>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

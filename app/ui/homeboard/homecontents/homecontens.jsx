@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import styles from './homecontents.module.css'
+import styles from './homecontents.module.css';
+import Image from 'next/image';
 
 const HomeContents = () => {
   return (

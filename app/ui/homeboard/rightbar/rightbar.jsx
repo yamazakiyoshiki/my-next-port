@@ -1,5 +1,5 @@
-import Image from "next/image";
 import styles from "./rightbar.module.css";
+import Image from "next/image";
 
 const Rightbar = () => {
   return (

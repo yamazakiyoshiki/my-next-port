@@ -1,7 +1,8 @@
-import Image from "next/image";
 import MenuLink from "./menuLink/menuLink";
 import styles from "./sidebar.module.css";
 import { auth, signOut } from "@/app/auth";
+import Image from "next/image";
+import Link from "next/link";
 import {
   MdDashboard,
   MdSupervisedUserCircle,
@@ -14,7 +15,6 @@ import {
   MdLibraryBooks,
   MdFormatAlignCenter,
 } from "react-icons/md";
-import Link from "next/link";
 
 const menuItems = [
   {
@@ -60,21 +60,11 @@ const menuItems = [
         path: "#",
         icon: <MdAnalytics />,
       },
-      // {
-      //   title: "チーム",
-      //   path: "/homeboard/teams",
-      //   icon: <MdPeople />,
-      // },
     ],
   },
   {
     title: "ユーザー",
     list: [
-      // {
-      //   title: "設定",
-      //   path: "/homeboard/settings",
-      //   icon: <MdOutlineSettings />,
-      // },
       {
         title: "使い方",
         path: "/homeboard/help",

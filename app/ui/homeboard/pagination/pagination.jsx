@@ -22,7 +22,6 @@ const Pagination = ({ count }) => {
       : params.set("page", parseInt(page) + 1);
     replace(`${pathname}?${params}`);
   };
-
   return (
     <div className={styles.container}>
       <button

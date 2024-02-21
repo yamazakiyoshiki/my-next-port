@@ -1,6 +1,6 @@
-import { MdLeaderboard, MdOutlineHelp, MdSupervisedUserCircle } from "react-icons/md";
 import { Problem, User } from "./models";
 import { connectToDB } from "./utils";
+import { MdLeaderboard, MdOutlineHelp, MdSupervisedUserCircle } from "react-icons/md";
 
 export const fetchUsers = async (q, page) => {
   const regex = new RegExp(q, "i");
@@ -15,25 +15,21 @@ export const fetchUsers = async (q, page) => {
       .skip(ITEM_PER_PAGE * (page - 1));
     return { count, users };
   } catch (err) {
-    console.log(err);
     throw new Error("Failed to fetch users!");
   }
 };
 
 export const fetchUser = async (id) => {
-  console.log(id);
   try {
     await connectToDB();
     const user = await User.findById(id);
     return user;
   } catch (err) {
-    console.log(err);
     throw new Error("Failed to fetch user!");
   }
 };
 
 export const fetchProblems = async (q, page) => {
-  console.log(q);
   const regex = new RegExp(q, "i");
 
   const ITEM_PER_PAGE = 2;
@@ -46,7 +42,6 @@ export const fetchProblems = async (q, page) => {
       .skip(ITEM_PER_PAGE * (page - 1));
     return { count, problems };
   } catch (err) {
-    console.log(err);
     throw new Error("Failed to fetch problems!");
   }
 };
@@ -57,13 +52,11 @@ export const fetchProblem = async (id) => {
     const problem = await Problem.findById(id);
     return problem;
   } catch (err) {
-    console.log(err);
     throw new Error("Failed to fetch problem!");
   }
 };
 
 export const fetchUserPosts = async (q, page, username) => {
-  console.log(q);
   const regex = new RegExp(q, "i");
 
   const ITEM_PER_PAGE = 2;
@@ -83,11 +76,9 @@ export const fetchUserPosts = async (q, page, username) => {
 
     return { count, posts };
   } catch (err) {
-    console.log(err);
     throw new Error("Failed to fetch user's posts!");
   }
 };
-
 
 // DUMMY DATA
 

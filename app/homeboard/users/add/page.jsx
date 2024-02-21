@@ -20,24 +20,20 @@ const AddUserPage = () => {
           placeholder="住所"
         />
         <select name="isAdmin" id="isAdmin">
-          <option value={false}>
-            認証済み?
-          </option>
+          <option value={false}>認証済み?</option>
           <option value={true}>はい</option>
           <option value={false}>いいえ</option>
         </select>
         <select name="isActive" id="isActive">
-          <option value={true}>
-            ログイン状態の保持?
-          </option>
-          <option value={true}>はい</option>
-          <option value={false}>いいえ</option>
+          <option value={true}>ログイン頻度</option>
+          <option value={true}>多い</option>
+          <option value={false}>少ない</option>
         </select>
         <textarea
-        name="desc"
-        id="desc"
-        rows="2"
-        placeholder="自己紹介"
+          name="desc"
+          id="desc"
+          rows="2"
+          placeholder="自己紹介"
         />
         <button type="submit">新規登録</button>
       </form>

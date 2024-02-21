@@ -33,3 +33,11 @@
 .form p{
   color: var(--err);
 }
+
+@media screen and (max-width:450px) {
+  .form button{
+    width: 50%;
+    padding: 15px;
+  }
+  /*=======max-width:450px========*/
+}

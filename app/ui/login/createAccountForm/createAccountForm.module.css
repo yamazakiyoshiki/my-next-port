@@ -1,4 +1,4 @@
-.container {
+.container{
   background-color: var(--bgSoft);
   padding: 20px;
   border-radius: 10px;
@@ -20,7 +20,7 @@
   padding: 10px;
   border-radius: 5px;
   border: none;
-  width: 10%;
+  width: 20%;
   color: var(--text);
   background-color: rgba(29, 114, 133, 0.748);
   text-align: center;
@@ -34,7 +34,7 @@
   color: rosybrown;
 }
 
-.form {
+.form{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -70,8 +70,20 @@
   margin-right: auto;
 }
 
-.errMessage{
-  position: fixed;
-  right: 40px;
-  bottom: 40px;
+@media screen and (max-width:450px) {
+  .loginButton{
+    width: 30%;
+  }
+  .form button{
+    width: 200px;
+    padding: 20px;
+  }
+  .errMessage{
+    margin-top: 20px;
+    position: static;
+  }
+  .errMessage p{
+    text-align: center;
+  }
+  /*=======max-width:700px========*/
 }

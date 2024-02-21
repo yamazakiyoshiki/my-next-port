@@ -11,7 +11,7 @@ const SingleUserPage = async ({ params }) => {
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
-          <Image src={user.img || "/noavatar.png"} alt="" fill />
+          <Image src={user.img || "/noavatar.png"} alt="" fill/>
         </div>
         {user.username}
       </div>
@@ -30,11 +30,12 @@ const SingleUserPage = async ({ params }) => {
           <textarea type="text" name="address" placeholder={user.address} />
           <label>認証</label>
           <input
-          type="text"
-          name="isAdimin"
-          placeholder={user.isAdmin?"ログインユーザー" : "ゲストユーザー"}
-          className={styles.readonly}
-          readOnly />
+            type="text"
+            name="isAdimin"
+            placeholder={user.isAdmin?"ログインユーザー" : "ゲストユーザー"}
+            className={styles.readonly}
+            readOnly
+          />
           <label>ログイン頻度</label>
           <select name="isActive" id="isActive" defaultValue={user.isActive.toString()? "多い" : "少ない"}>
             <option value={true}>多い</option>

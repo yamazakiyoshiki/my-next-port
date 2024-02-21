@@ -1,5 +1,7 @@
 "use client";
 
+import styles from "@/app/ui/homeboard/navbar/responsiveNavbar/responsiveNavbar.module.css";
+import NavContents from "./navcontents/navcontents";
 import { useState } from "react";
 import {
     MdAnalytics,
@@ -12,8 +14,6 @@ import {
     MdOutlineMenuBook,
     MdSupervisedUserCircle
   } from "react-icons/md";
-import styles from "@/app/ui/homeboard/navbar/responsiveNavbar/responsiveNavbar.module.css";
-import NavContents from "./navcontents/navcontents";
 
 const navContents = [
   {
@@ -56,7 +56,7 @@ const navContents = [
     path: "/homeboard/help",
     icon: <MdHelpCenter />,
   },
-]
+];
 
 const ResponsiveNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,7 +68,7 @@ const ResponsiveNavbar = () => {
       </button>
       {isOpen? <NavContents setIsOpen={setIsOpen} navContents={navContents} /> : null}
     </div>
-  )
-}
+  );
+};
 
 export default ResponsiveNavbar;

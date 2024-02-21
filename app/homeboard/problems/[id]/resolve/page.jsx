@@ -1,5 +1,5 @@
 import { fetchProblem } from "@/app/lib/data";
-import styles from "@/app/ui/homeboard/resolve/resolve.module.css"
+import styles from "@/app/ui/homeboard/resolve/resolve.module.css";
 
 const SingleResolvePage = async ({params}) => {
   const { id } = params;
@@ -18,4 +18,4 @@ const SingleResolvePage = async ({params}) => {
   )
 }
 
-export default SingleResolvePage
+export default SingleResolvePage;

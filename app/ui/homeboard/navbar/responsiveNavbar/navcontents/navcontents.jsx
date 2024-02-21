@@ -1,8 +1,8 @@
 "use client";
 
+import styles from "@/app/ui/homeboard/navbar/responsiveNavbar/navcontents/navcontents.module.css";
 import Link from "next/link";
 import { MdClear } from "react-icons/md";
-import styles from "@/app/ui/homeboard/navbar/responsiveNavbar/navcontents/navcontents.module.css";
 
 const NavContents= ({setIsOpen, navContents}) => {
   return (
@@ -27,7 +27,7 @@ const NavContents= ({setIsOpen, navContents}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default NavContents;

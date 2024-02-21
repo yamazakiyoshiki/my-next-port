@@ -1,10 +1,10 @@
-.container {
+.container{
   display: flex;
   gap: 50px;
   margin-top: 20px;
 }
 
-.infoContainer {
+.infoContainer{
   flex: 1;
   background-color: var(--bgSoft);
   padding: 20px;
@@ -23,7 +23,7 @@
   margin-bottom: 20px;
 }
 
-.formContainer {
+.formContainer{
   flex: 3;
   background-color: var(--bgSoft);
   padding: 20px;

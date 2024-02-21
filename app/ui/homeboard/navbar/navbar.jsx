@@ -1,5 +1,7 @@
 "use client";
 
+import styles from "./navbar.module.css";
+import ResponsiveNavbar from "./responsiveNavbar/responsiveNavbar";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import {
@@ -7,12 +9,9 @@ import {
   MdSearch,
   MdSupervisedUserCircle,
 } from "react-icons/md";
-import styles from "./navbar.module.css";
-import ResponsiveNavbar from "./responsiveNavbar/responsiveNavbar";
 
 const Navbar = () => {
   const pathname = usePathname();
-
   return (
     <div className={styles.container}>
       <div className={styles.title}>{pathname.split("/").pop()}Page</div>
@@ -23,7 +22,7 @@ const Navbar = () => {
         </div>
         <div className={styles.icons}>
           <Link href="/homeboard/users">
-          <MdSupervisedUserCircle size={20} />
+            <MdSupervisedUserCircle size={20} />
           </Link>
           <Link href="/homeboard">
             <MdPublic size={20} />

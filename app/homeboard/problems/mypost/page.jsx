@@ -1,10 +1,10 @@
-import Link from "next/link";
-import styles from "@/app/ui/homeboard/problems/problems.module.css";
-import Search from "@/app/ui/homeboard/search/search";
-import Pagination from "@/app/ui/homeboard/pagination/pagination";
 import { fetchUserPosts } from "@/app/lib/data";
 import { deleteProblem } from "@/app/lib/actions";
 import { auth } from "@/app/auth";
+import styles from "@/app/ui/homeboard/problems/problems.module.css";
+import Search from "@/app/ui/homeboard/search/search";
+import Pagination from "@/app/ui/homeboard/pagination/pagination";
+import Link from "next/link";
 
 const MyPostPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
@@ -38,11 +38,12 @@ const MyPostPage = async ({ searchParams }) => {
               <td>
                 <div className={styles.post}>
                   {post.title > 20 ?
-                  `${post.title.substring(0, 20)}...`:post.title}
+                  `${post.title.substring(0, 20)}...` : post.title}
                 </div>
               </td>
-              <td>{post.desc.length >
-                20 ? `${post.desc.substring(0, 20)}...` : post.desc}</td>
+              <td>
+                {post.desc.length > 20 ? `${post.desc.substring(0, 20)}...` : post.desc}
+              </td>
               <td>{post.level}</td>
               <td>{post.createdAt?.toString().slice(4, 16)}</td>
               <td>{post.username}</td>

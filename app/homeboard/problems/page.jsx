@@ -1,8 +1,8 @@
-import Link from "next/link";
+import { fetchProblems } from "@/app/lib/data";
 import styles from "@/app/ui/homeboard/problems/problems.module.css";
 import Search from "@/app/ui/homeboard/search/search";
 import Pagination from "@/app/ui/homeboard/pagination/pagination";
-import { fetchProblems } from "@/app/lib/data";
+import Link from "next/link";
 
 const ProblemsPage = async ({ searchParams }) => {
   const q = searchParams?.q || "";
@@ -13,7 +13,9 @@ const ProblemsPage = async ({ searchParams }) => {
       <div className={styles.top}>
         <Search placeholder="問題を検索..." />
         <Link href="/homeboard/problems/add">
-          <button className={styles.addButton}>新規作成</button>
+          <button className={styles.addButton}>
+            新規作成
+          </button>
         </Link>
       </div>
       <table className={styles.table}>

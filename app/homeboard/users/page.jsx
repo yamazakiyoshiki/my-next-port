@@ -26,9 +26,9 @@ const UsersPage = async ({ searchParams }) => {
             <td>名前</td>
             <td>メールアドレス</td>
             <td>開設日</td>
-            <td>アカウントロール</td>
-            <td>ログイン頻度</td>
-            <td>アクション</td>
+            <td>アカウント</td>
+            <td>使用頻度</td>
+            <td>情報</td>
           </tr>
         </thead>
         <tbody>
@@ -46,7 +46,7 @@ const UsersPage = async ({ searchParams }) => {
                   {user.username}
                 </div>
               </td>
-              <td>{user.email}</td>
+              <td>{user.email ? user.email : "未登録"}</td>
               <td>{user.createdAt?.toString().slice(4, 16)}</td>
               <td>{user.isAdmin ? "認証済み" : "ゲスト"}</td>
               <td>{user.isActive ? "多い" : "少ない"}</td>

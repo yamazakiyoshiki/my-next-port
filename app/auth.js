@@ -1,8 +1,8 @@
+import { User } from "./lib/models";
+import { connectToDB } from "./lib/utils";
+import { authConfig } from "./authconfig";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { authConfig } from "./authconfig";
-import { connectToDB } from "./lib/utils";
-import { User } from "./lib/models";
 import bcrypt from "bcrypt";
 
 const login = async (credentials) => {
@@ -45,7 +45,6 @@ export const { signIn, signOut, auth } = NextAuth({
         token.username = user.username;
         token.isAdmin = user.isAdmin;
       }
-      console.log(token);
       return token;
     },
     async session({ session, token }) {
@@ -54,7 +53,6 @@ export const { signIn, signOut, auth } = NextAuth({
         session.user.username = token.username;
         session.user.isAdmin = token.isAdmin;
       }
-      console.log(session);
       return session;
     },
   },

@@ -19,35 +19,38 @@ const ProfilePage = async ({params}) => {
           <input type="hidden" name="id" value={user.id}/>
           <label>ユーザーネーム</label>
           <input
-          type="text"
-          name="username"
-          placeholder={user.username}
-          className={styles.readonly}
-          readOnly />
+            type="text"
+            name="username"
+            placeholder={user.username}
+            className={styles.readonly}
+            readOnly
+          />
           <label>認証</label>
           <input
-          type="text"
-          name="isAdimin"
-          placeholder={user.isAdmin?"ログインユーザー" : "ゲストユーザー"}
-          className={styles.readonly}
-          readOnly />
+            type="text"
+            name="isAdimin"
+            placeholder={user.isAdmin?"ログインユーザー" : "ゲストユーザー"}
+            className={styles.readonly}
+            readOnly
+          />
           <label>ログイン頻度</label>
           <input
-          type="text"
-          name="isActive"
-          placeholder={user.isActive? "多い" : "少ない"}
-          className={styles.readonly}
-          readOnly />
+            type="text"
+            name="isActive"
+            placeholder={user.isActive? "多い" : "少ない"}
+            className={styles.readonly}
+            readOnly
+          />
           <label>自己紹介</label>
           <textarea
-          type="text"
-          name="desc"
-          placeholder={user.desc}
-          className={styles.readonly}
-          readOnly
+            type="text"
+            name="desc"
+            placeholder={user.desc}
+            className={styles.readonly}
+            readOnly
           />
           <Link href="/homeboard/users">
-          <button>戻る</button>
+            <button>戻る</button>
           </Link>
         </form>
       </div>
@@ -55,4 +58,4 @@ const ProfilePage = async ({params}) => {
   )
 }
 
-export default ProfilePage
+export default ProfilePage;

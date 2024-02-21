@@ -1,8 +1,8 @@
 "use client";
 
-import { useFormStatus, useFormState } from "react-dom";
 import { createAccount } from "@/app/lib/actions";
-import styles from "@/app/ui/login/createAccountForm/createAccountForm.module.css"
+import styles from "@/app/ui/login/createAccountForm/createAccountForm.module.css";
+import { useFormStatus, useFormState } from "react-dom";
 import Link from "next/link";
 
 const CreateAccountForm = () => {
@@ -44,7 +44,10 @@ const CreateAccountForm = () => {
           <SingUpButton/>
           <div className={styles.errMessage}>
             {state === "FailedSignUp" && (
-              <p>サインアップに失敗しました。</p>
+              <p>
+                サインアップに失敗しました。<br />
+                ユーザー名が既に使われているかもしれません。
+              </p>
             )}
           </div>
         </form>
@@ -59,7 +62,7 @@ const SingUpButton = () => {
     <button aria-disabled={pending}>
       新規登録
     </button>
-  )
-}
+  );
+};
 
 export default CreateAccountForm;

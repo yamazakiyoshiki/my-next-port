@@ -1,5 +1,5 @@
-import styles from "@/app/ui/homeboard/help/help.module.css"
-import { MdHelpCenter, MdOutlineMenuBook, MdSupervisedUserCircle } from "react-icons/md"
+import styles from "@/app/ui/homeboard/help/help.module.css";
+import { MdHelpCenter, MdOutlineMenuBook, MdSupervisedUserCircle } from "react-icons/md";
 
 const helpData = [
   {
@@ -14,7 +14,7 @@ const helpData = [
     title: "問題ページ",
     desc: "1.問題一覧ページではこのアプリ全ユーザーが投稿した問題の一覧を見ることができます。\n\n2.自分の投稿一覧ページでは自分が投稿した問題を一覧で確認することができ編集、削除ができます。\n\n3.問題を解くページでは問題一覧の中から問題にチャレンジすることが出来ます。\n\n3.問題を作るページでは問題作成フォーマットにそって簡単に問題を作ることが出来ます。",
   },
-]
+];
 
 const Help = () => {
   return (
@@ -44,7 +44,7 @@ const Help = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Help
+export default Help;

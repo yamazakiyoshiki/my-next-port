@@ -1,8 +1,8 @@
 "use client";
 
 import { authenticate } from "@/app/lib/actions";
-import { useFormState, useFormStatus } from "react-dom";
 import styles from "./loginForm.module.css";
+import { useFormState, useFormStatus } from "react-dom";
 
 const LoginForm = () => {
   const [state, formAction] = useFormState(authenticate, undefined);
@@ -12,10 +12,6 @@ const LoginForm = () => {
       <input type="text" placeholder="ユーザーネーム" name="username" />
       <input type="password" placeholder="パスワード" name="password" />
       <SingInButton/>
-      {/* <button>ログイン</button> */}
-      {/* {state === "Wrong Credentials" && (
-        <p>ログインに失敗しました。</p>
-      )} */}
       {state && "Wrong Credentials" && (
         <p>ログインに失敗しました。</p>
       )}
@@ -29,7 +25,7 @@ const SingInButton = () => {
     <button aria-disabled={pending}>
       ログイン
     </button>
-  )
-}
+  );
+};
 
 export default LoginForm;
