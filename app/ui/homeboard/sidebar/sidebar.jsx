@@ -6,16 +6,13 @@ import {
   MdDashboard,
   MdSupervisedUserCircle,
   MdAnalytics,
-  MdPeople,
   MdOutlineSettings,
   MdHelpCenter,
   MdLogout,
-  MdCreateNewFolder ,
   MdOutlineMenuBook,
-  MdFormatAlignJustify,
   MdLibraryAdd,
-  MdLibraryAddCheck,
   MdLibraryBooks,
+  MdFormatAlignCenter,
 } from "react-icons/md";
 import Link from "next/link";
 
@@ -36,7 +33,7 @@ const menuItems = [
       {
         title: "問題一覧",
         path: "/homeboard/problems",
-        icon: <MdFormatAlignJustify />,
+        icon: <MdFormatAlignCenter />,
       },
       {
         title: "自分の投稿一覧",

@@ -109,7 +109,7 @@ export const cards = [
   {
     id: 3,
     icon: <MdLeaderboard size={24}/>,
-    title: "今週のベストスコア",
+    title: "ベストスコア",
     number: "18,000",
     change: "18%",
   },

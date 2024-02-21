@@ -1,20 +1,44 @@
-.overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background-color:rgba(0,0,0,0.5);
+.navContents{
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+  background-color: #182237e4;
+}
 
-  /*　画面の中央に要素を表示させる設定　*/
+.navContent{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  color: var(--text);
+  margin: 5px;
+}
+
+.navContent button{
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
-.contents{
-  z-index: 2;
-  width: 50%;
-  padding: 1em;
-  background: #fff;
+.button{
+  position: fixed;
+  top: 15%;
+  left: 20%;
+  width: 10%;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgba(225, 239, 250, 0.812);
 }

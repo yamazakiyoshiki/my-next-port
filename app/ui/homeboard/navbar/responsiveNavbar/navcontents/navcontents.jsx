@@ -1,14 +1,12 @@
 "use client";
 
-import styles from "@/app/ui/homeboard/navbar/responsiveNavbar/navcontents/navcontents.module.css";
 import Link from "next/link";
+import { MdClear } from "react-icons/md";
+import styles from "@/app/ui/homeboard/navbar/responsiveNavbar/navcontents/navcontents.module.css";
 
 const NavContents= ({setIsOpen, navContents}) => {
   return (
     <div className={styles.container}>
-      <button>
-        close
-      </button>
       <div className={styles.overlay}>
         <div className={styles.navContents}>
           {navContents?.map((content) => (
@@ -17,11 +15,15 @@ const NavContents= ({setIsOpen, navContents}) => {
               href={content.path}
               className={styles.navContent}
             >
-              {content.title}
-              {content.icon}
+              <button onClick={() => setIsOpen(false)}>
+                {content.title}
+                {content.icon}
+              </button>
             </Link>
           ))}
-          <button onClick={() => setIsOpen(false)}>close</button>
+          <button onClick={() => setIsOpen(false)} className={styles.button}>
+            <MdClear size={30}/>
+          </button>
         </div>
       </div>
     </div>

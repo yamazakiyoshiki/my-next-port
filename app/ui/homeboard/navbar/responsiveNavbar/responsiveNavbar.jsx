@@ -29,7 +29,7 @@ const navContents = [
   {
     title: "問題一覧",
     path: "/homeboard/problems",
-    icon: <MdFormatAlignJustify />,
+    icon: <MdFormatAlignCenter />,
   },
   {
     title: "自分の投稿一覧",
@@ -62,9 +62,9 @@ const ResponsiveNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const openNavContents = () => setIsOpen(true);
   return (
-    <div>
+    <div className={styles.container}>
       <button onClick={openNavContents}>
-        <MdFormatAlignCenter/>
+        <MdFormatAlignJustify size={20}/>
       </button>
       {isOpen? <NavContents setIsOpen={setIsOpen} navContents={navContents} /> : null}
     </div>
