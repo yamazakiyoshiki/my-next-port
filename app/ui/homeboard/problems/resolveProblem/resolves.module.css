@@ -25,16 +25,22 @@
   gap: 10px;
 }
 
-.buttons{
-  display: flex;
-  gap: 10px;
-}
-
 .button{
+  width: 100px;
   padding: 5px 10px;
   border-radius: 5px;
   color: var(--text);
   border: none;
   cursor: pointer;
   background-color: teal;
+}
+
+@media screen and (max-width:450px) {
+  .spHidden{
+    display: none;
+  }
+  .button{
+    width: 90px;
+  }
+  /*=======max-width:450px========*/
 }

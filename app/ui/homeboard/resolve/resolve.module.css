@@ -1,4 +1,5 @@
 .container{
+  width: 100%;
   display: flex;
   background-color: var(--bgSoft);
   padding: 20px;
@@ -69,6 +70,33 @@
 }
 
 .Vue{
-  background-color: #7bea9ae4;
-  color: #ca8282;
+  background-color: #67da88e4;
+  color: #7f4747d4;
+}
+
+.NextJs{
+  background-color: cadetblue;
+  color: #2e374ad2;
+}
+
+.NuxtJs{
+  background-color: bisque;
+  color: #2e374aa9;
+}
+
+@media screen and (max-width:450px) {
+  .header{
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+  .header h1{
+    width: 150px;
+  }
+  .level{
+    width: 90px;
+  }
+  .cat{
+    width: 90px;
+  }
+  /*=======max-width:450px========*/
 }

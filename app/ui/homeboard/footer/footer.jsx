@@ -1,11 +1,18 @@
-import { signOut } from "@/app/auth";
 import styles from "./footer.module.css";
-import { MdLogout } from "react-icons/md";
+import { auth, signOut } from "@/app/auth";
+import { MdLogout, MdOutlineSettings } from "react-icons/md";
+import Link from "next/link";
 
-const Footer = () => {
+const Footer = async () => {
+  const { user } = await auth();
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>Yamazaki Dev</div>
+      <div>
+        <Link href={`/homeboard/users/${user.id}`} className={styles.setting}>
+          <MdOutlineSettings/>
+          ユーザー設定
+        </Link>
+      </div>
       <form
         action={async () => {
           "use server";
@@ -16,7 +23,7 @@ const Footer = () => {
           ログアウト
         </button>
       </form>
-      <div className={styles.text}>© All rights reserved.</div>
+      <div className={styles.text}>© yamazaki Dev</div>
     </div>
   );
 };

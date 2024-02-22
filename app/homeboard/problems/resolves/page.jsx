@@ -17,10 +17,10 @@ const ResolvesProblemPage = async ({searchParams}) => {
         <thead>
           <tr>
             <td>タイトル</td>
-            <td>詳細</td>
+            <td className={styles.spHidden}>詳細</td>
             <td>レベル</td>
             <td>作成日</td>
-            <td>ステップ数</td>
+            <td className={styles.spHidden}>ステップ数</td>
           </tr>
         </thead>
         <tbody>
@@ -31,19 +31,17 @@ const ResolvesProblemPage = async ({searchParams}) => {
                   {problem.title}
                 </div>
               </td>
-              <td>{problem.desc.length >
+              <td className={styles.spHidden}>{problem.desc.length >
                 20 ? `${problem.desc.substring(0, 20)}...` : problem.desc}</td>
               <td>{problem.level}</td>
               <td>{problem.createdAt?.toString().slice(4, 16)}</td>
-              <td>{problem.step}ステップ</td>
+              <td className={styles.spHidden}>{problem.step}ステップ</td>
               <td>
-                <div className={styles.buttons}>
-                  <Link href={`/homeboard/problems/${problem.id}/resolve`}>
-                    <button className={styles.button}>
-                      チャレンジ
-                    </button>
-                  </Link>
-                </div>
+                <Link href={`/homeboard/problems/${problem.id}/resolve`}>
+                  <button className={styles.button}>
+                    チャレンジ
+                  </button>
+                </Link>
               </td>
             </tr>
           ))}

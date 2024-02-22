@@ -13,7 +13,7 @@ const ProblemsPage = async ({ searchParams }) => {
       <div className={styles.top}>
         <Search placeholder="問題を検索..." />
         <Link href="/homeboard/problems/add">
-          <button className={styles.addButton}>
+          <button className={styles.createButton}>
             新規作成
           </button>
         </Link>
@@ -22,8 +22,8 @@ const ProblemsPage = async ({ searchParams }) => {
         <thead>
           <tr>
             <td>タイトル</td>
-            <td>カテゴリー</td>
-            <td>レベル</td>
+            <td className={styles.spHidden}>カテゴリー</td>
+            <td className={styles.spHidden}>レベル</td>
             <td>作成日</td>
             <td>投稿者</td>
             <td>編集</td>
@@ -35,21 +35,19 @@ const ProblemsPage = async ({ searchParams }) => {
               <td>
                 <div className={styles.problem}>
                   {problem.title > 20 ?
-                  `${problem.title.substring(0, 20)}...` : problem.title}
+                  `${problem.title.substring(0, 15)}...` : problem.title}
                 </div>
               </td>
-              <td>{problem.cat}</td>
-              <td>{problem.level}</td>
+              <td className={styles.spHidden}>{problem.cat}</td>
+              <td className={styles.spHidden}>{problem.level}</td>
               <td>{problem.createdAt?.toString().slice(4, 16)}</td>
               <td>{problem.username}</td>
               <td>
-                <div className={styles.buttons}>
-                  <Link href={`/homeboard/problems/${problem.id}/detail`}>
-                    <button className={`${styles.button} ${styles.view}`}>
-                      詳細
-                    </button>
-                  </Link>
-                </div>
+                <Link href={`/homeboard/problems/${problem.id}/detail`}>
+                  <button className={`${styles.button} ${styles.view}`}>
+                    詳細
+                  </button>
+                </Link>
               </td>
             </tr>
           ))}

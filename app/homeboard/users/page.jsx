@@ -11,22 +11,18 @@ const UsersPage = async ({ searchParams }) => {
   const page = searchParams?.page || 1;
   const { count, users } = await fetchUsers(q, page);
   const authUser = await auth();
-
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <Search placeholder="ユーザーを検索..." />
-        {/* <Link href="/homeboard/users/add">
-          <button className={styles.addButton}>新規追加</button>
-        </Link> */}
       </div>
       <table className={styles.table}>
         <thead>
           <tr>
             <td>名前</td>
-            <td>メールアドレス</td>
+            <td className={styles.userEmail}>メールアドレス</td>
             <td>開設日</td>
-            <td>アカウント</td>
+            <td className={styles.admin}>アカウント</td>
             <td>使用頻度</td>
             <td>情報</td>
           </tr>
@@ -46,9 +42,9 @@ const UsersPage = async ({ searchParams }) => {
                   {user.username}
                 </div>
               </td>
-              <td>{user.email ? user.email : "未登録"}</td>
+              <td className={styles.userEmail}>{user.email ? user.email : "未登録"}</td>
               <td>{user.createdAt?.toString().slice(4, 16)}</td>
-              <td>{user.isAdmin ? "認証済み" : "ゲスト"}</td>
+              <td className={styles.admin}>{user.isAdmin ? "認証済み" : "ゲスト"}</td>
               <td>{user.isActive ? "多い" : "少ない"}</td>
               <td>
                 <div className={styles.buttons}>

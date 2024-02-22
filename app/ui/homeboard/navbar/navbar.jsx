@@ -2,7 +2,6 @@
 
 import styles from "./navbar.module.css";
 import ResponsiveNavbar from "./responsiveNavbar/responsiveNavbar";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import {
   MdPublic,
@@ -11,10 +10,8 @@ import {
 } from "react-icons/md";
 
 const Navbar = () => {
-  const pathname = usePathname();
   return (
     <div className={styles.container}>
-      <div className={styles.title}>{pathname.split("/").pop()}Page</div>
       <div className={styles.menu}>
         <div className={styles.search}>
           <MdSearch />

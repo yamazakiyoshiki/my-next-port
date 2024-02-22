@@ -15,7 +15,7 @@ const SingleResolvePage = async ({params}) => {
         <p className={styles.desc}>{problem.desc}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SingleResolvePage;
