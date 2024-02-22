@@ -94,7 +94,7 @@ export const addProblem = async (formData) => {
 };
 
 export const updateProblem = async (formData) => {
-  const { id, title, desc, cat, step, level } =
+  const { id, title, desc, cat, step, level, username } =
     Object.fromEntries(formData);
   try {
     await connectToDB();
