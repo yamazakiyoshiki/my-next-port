@@ -22,11 +22,12 @@ const ProblemsPage = async ({ searchParams }) => {
         <thead>
           <tr>
             <td>タイトル</td>
+            <td>詳細</td>
             <td className={styles.spHidden}>カテゴリー</td>
             <td className={styles.spHidden}>レベル</td>
             <td>作成日</td>
             <td>投稿者</td>
-            <td>編集</td>
+            <td>確認</td>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +37,12 @@ const ProblemsPage = async ({ searchParams }) => {
                 <div className={styles.problem}>
                   {problem.title > 20 ?
                   `${problem.title.substring(0, 15)}...` : problem.title}
+                </div>
+              </td>
+              <td>
+                <div className={styles.problem}>
+                  {problem.desc > 20 ?
+                  `${problem.desc.substring(0, 15)}...` : problem.desc}
                 </div>
               </td>
               <td className={styles.spHidden}>{problem.cat}</td>

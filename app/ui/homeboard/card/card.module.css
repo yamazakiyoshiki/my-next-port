@@ -35,3 +35,10 @@
 .negative{
   color: red;
 }
+
+@media screen and (max-width:450px) {
+  .container{
+    width: 30%;
+  }
+  /*=======max-width:450px========*/
+}

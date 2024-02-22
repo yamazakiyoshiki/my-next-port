@@ -25,9 +25,9 @@ const MyPostPage = async ({ searchParams }) => {
           <tr>
             <td>タイトル</td>
             <td className={styles.spHidden}>詳細</td>
+            <td className={styles.spHidden}>カテゴリー</td>
             <td className={styles.spHidden}>レベル</td>
             <td>作成日</td>
-            <td>投稿者</td>
             <td>投稿</td>
           </tr>
         </thead>
@@ -43,6 +43,7 @@ const MyPostPage = async ({ searchParams }) => {
               <td className={styles.spHidden}>
                 {post.desc.length > 20 ? `${post.desc.substring(0, 20)}...` : post.desc}
               </td>
+              <td className={styles.spHidden}>{post.cat}</td>
               <td className={styles.spHidden}>{post.level}</td>
               <td>{post.createdAt?.toString().slice(4, 16)}</td>
               <td>{post.username}</td>

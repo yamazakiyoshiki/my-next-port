@@ -42,7 +42,10 @@
     display: none;
   }
   .content{
-    width: 700px;
+    width: 500px;
+  }
+  .menu{
+    width: 100px;
   }
   /*=======max-width:700px========*/
 }
@@ -50,9 +53,6 @@
 @media screen and (max-width:450px) {
   .menu{
     display: none;
-  }
-  .content{
-    width: 600px;
   }
   /*=======max-width:600px========*/
 }

@@ -18,6 +18,7 @@ const ResolvesProblemPage = async ({searchParams}) => {
           <tr>
             <td>タイトル</td>
             <td className={styles.spHidden}>詳細</td>
+            <td>カテゴリー</td>
             <td>レベル</td>
             <td>作成日</td>
             <td className={styles.spHidden}>ステップ数</td>
@@ -33,6 +34,7 @@ const ResolvesProblemPage = async ({searchParams}) => {
               </td>
               <td className={styles.spHidden}>{problem.desc.length >
                 20 ? `${problem.desc.substring(0, 20)}...` : problem.desc}</td>
+              <td>{problem.cat}</td>
               <td>{problem.level}</td>
               <td>{problem.createdAt?.toString().slice(4, 16)}</td>
               <td className={styles.spHidden}>{problem.step}ステップ</td>
