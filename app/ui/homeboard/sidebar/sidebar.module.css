@@ -40,6 +40,7 @@
   margin: 10px 0px;
 }
 
+.setting,
 .logout{
   padding: 20px;
   margin: 5px 0px;
@@ -54,6 +55,7 @@
   width: 100%;
 }
 
+.setting:hover,
 .logout:hover{
   background-color: #2e374a;
 }

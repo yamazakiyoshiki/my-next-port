@@ -22,7 +22,6 @@ const Pagination = ({ count }) => {
       : params.set("page", parseInt(page) + 1);
     replace(`${pathname}?${params}`);
   };
-
   return (
     <div className={styles.container}>
       <button
@@ -30,14 +29,14 @@ const Pagination = ({ count }) => {
         disabled={!hasPrev}
         onClick={() => handleChangePage("prev")}
       >
-        Previous
+        前へ
       </button>
       <button
         className={styles.button}
         disabled={!hasNext}
         onClick={() => handleChangePage("next")}
       >
-        Next
+        次へ
       </button>
     </div>
   );

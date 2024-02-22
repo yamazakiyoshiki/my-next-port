@@ -1,50 +1,44 @@
 "use client"
 
+import { countProblemCat } from '@/app/lib/actions';
 import styles from './chart.module.css'
+import { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const data = [
-  {
-    name: "Sun",
-    visit: 4000,
-    click: 2400,
-  },
-  {
-    name: "Mon",
-    visit: 3000,
-    click: 1398,
-  },
-  {
-    name: "Tue",
-    visit: 2000,
-    click: 3800,
-  },
-  {
-    name: "Wed",
-    visit: 2780,
-    click: 3908,
-  },
-  {
-    name: "Thu",
-    visit: 1890,
-    click: 4800,
-  },
-  {
-    name: "Fri",
-    visit: 2390,
-    click: 3800,
-  },
-  {
-    name: "Sat",
-    visit: 3490,
-    click: 4300,
-  },
-];
+const getWeekdaysStartingToday = () => {
+  const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const today = new Date().getDay(); // 今日の曜日のインデックス (0-6)
+  return [...weekdays.slice(today), ...weekdays.slice(0, today)];
+};
 
-const Chart = () => {
+const Chart =  () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const counts = await countProblemCat();
+        const weekdays = getWeekdaysStartingToday();
+        const chartData = weekdays.map(day => ({
+          name: day,
+          JavaScript: counts.JavaScript || 0,
+          TypeScript: counts.TypeScript || 0,
+          React: counts.React || 0,
+          Vue: counts.Vue || 0,
+          NextJs: counts.NextJs || 0,
+          NuxtJs: counts.NuxtJs || 0,
+        }));
+        setData(chartData);
+      } catch (err) {
+        console.error("Failed fetching chartData!", err);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Weekly Recap</h2>
+      <h2 className={styles.title}>今週のジャンルトレンド</h2>
       <ResponsiveContainer width="100%" height="90%">
         <LineChart
           width={500}
@@ -61,12 +55,16 @@ const Chart = () => {
           <YAxis />
           <Tooltip contentStyle={{background:"#151c2c", border:"none"}}/>
           <Legend />
-          <Line type="monotone" dataKey="visit" stroke="#8884d8" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="click" stroke="#82ca9d" strokeDasharray="3 4 5 2" />
+          <Line type="monotone" dataKey="JavaScript" stroke="#8884d8" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="TypeScript" stroke="#82ca9d" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="React" stroke="#cac382" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="Vue" stroke="#ca8282" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="NextJs" stroke="#b282ca" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="NuxtJs" stroke="#ca9982" strokeDasharray="5 5" />
         </LineChart>
       </ResponsiveContainer>
     </div>
-  )
-}
+  );
+};
 
-export default Chart
+export default Chart;

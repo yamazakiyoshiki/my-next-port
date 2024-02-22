@@ -11,44 +11,40 @@ const SingleProblemPage = async ({ params }) => {
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
-          <Image src="/noavatar.png" alt="" fill />
+          <Image src="/noproblem.jpg" alt="" fill />
         </div>
         {problem.title}
       </div>
       <div className={styles.formContainer}>
         <form action={updateProblem} className={styles.form}>
           <input type="hidden" name="id" value={problem.id} />
-          <label>Title</label>
+          <label>タイトル</label>
           <input type="text" name="title" placeholder={problem.title} />
-          <label>Price</label>
-          <input type="number" name="price" placeholder={problem.price} />
-          <label>Stock</label>
-          <input type="number" name="stock" placeholder={problem.stock} />
-          <label>Color</label>
-          <input
-            type="text"
-            name="color"
-            placeholder={problem.color || "color"}
-          />
-          <label>Size</label>
-          <textarea
-            type="text"
-            name="size"
-            placeholder={problem.size || "size"}
-          />
-          <label>Cat</label>
-          <select name="cat" id="cat">
-            <option value="kitchen">Kitchen</option>
-            <option value="computers">Computers</option>
+          <label>ステップ数</label>
+          <input type="number" name="step" placeholder={problem.step} max="10" />
+          <label>難易度</label>
+          <select name="level" id="level" defaultValue={problem.level}>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
           </select>
-          <label>Description</label>
+          <label>カテゴリー</label>
+          <select name="cat" id="cat" defaultValue={problem.cat}>
+            <option value="JavaScript">JavaScript</option>
+            <option value="TypeScript">TypeScript</option>
+            <option value="React">React</option>
+            <option value="Vue">Vue</option>
+            <option value="NextJs">Next.Js</option>
+            <option value="NuxtJs">Nuxt.Js</option>
+          </select>
+          <label>問題の詳細</label>
           <textarea
             name="desc"
             id="desc"
             rows="10"
             placeholder={problem.desc}
           ></textarea>
-          <button>Update</button>
+          <button>投稿を更新</button>
         </form>
       </div>
     </div>

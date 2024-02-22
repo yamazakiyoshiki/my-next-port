@@ -1,7 +1,7 @@
 "use client";
 
-import { MdSearch } from "react-icons/md";
 import styles from "./search.module.css";
+import { MdSearch } from "react-icons/md";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 

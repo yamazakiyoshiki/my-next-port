@@ -11,7 +11,7 @@
   justify-content: space-between;
 }
 
-.addButton{
+.createButton{
   padding: 10px;
   background-color: #5d57c9;
   color: var(--text);
@@ -34,16 +34,6 @@
   gap: 10px;
 }
 
-.problemImage{
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.buttons{
-  display: flex;
-  gap: 10px;
-}
-
 .button{
   padding: 5px 10px;
   border-radius: 5px;
@@ -56,6 +46,12 @@
   background-color: teal;
 }
 
-.delete{
-  background-color: crimson;
+@media screen and (max-width:450px) {
+  .spHidden{
+    display: none;
+  }
+  .button{
+    width: 50px;
+  }
+  /*=======max-width:450px========*/
 }

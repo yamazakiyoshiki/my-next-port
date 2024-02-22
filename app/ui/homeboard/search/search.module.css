@@ -8,7 +8,7 @@
   width: max-content;
 }
 
-.input {
+.input{
   background-color: transparent;
   border: none;
   color: var(--text);

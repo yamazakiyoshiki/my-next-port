@@ -1,77 +1,73 @@
-import Image from "next/image";
 import MenuLink from "./menuLink/menuLink";
 import styles from "./sidebar.module.css";
+import { auth, signOut } from "@/app/auth";
+import Image from "next/image";
+import Link from "next/link";
 import {
   MdDashboard,
   MdSupervisedUserCircle,
-  MdShoppingBag,
-  MdAttachMoney,
-  MdWork,
   MdAnalytics,
-  MdPeople,
   MdOutlineSettings,
   MdHelpCenter,
   MdLogout,
+  MdOutlineMenuBook,
+  MdLibraryAdd,
+  MdLibraryBooks,
+  MdFormatAlignCenter,
 } from "react-icons/md";
-import { auth, signOut } from "@/app/auth";
 
 const menuItems = [
   {
-    title: "Pages",
+    title: "ページ",
     list: [
       {
-        title: "Dashboard",
-        path: "/dashboard",
+        title: "ホーム",
+        path: "/homeboard",
         icon: <MdDashboard />,
       },
       {
-        title: "Users",
-        path: "/dashboard/users",
+        title: "ユーザー",
+        path: "/homeboard/users",
         icon: <MdSupervisedUserCircle />,
       },
       {
-        title: "Products",
-        path: "/dashboard/products",
-        icon: <MdShoppingBag />,
+        title: "問題一覧",
+        path: "/homeboard/problems",
+        icon: <MdFormatAlignCenter />,
       },
       {
-        title: "Transactions",
-        path: "/dashboard/transactions",
-        icon: <MdAttachMoney />,
+        title: "自分の投稿一覧",
+        path: "/homeboard/problems/mypost",
+        icon: <MdLibraryBooks />,
+      },
+      {
+        title: "問題を解く",
+        path: "/homeboard/problems/resolves",
+        icon: <MdOutlineMenuBook />,
+      },
+      {
+        title: "問題を作る",
+        path: "/homeboard/problems/add",
+        icon: <MdLibraryAdd />,
       },
     ],
   },
   {
-    title: "Analytics",
+    title: "分析",
     list: [
       {
-        title: "Revenue",
-        path: "/dashboard/revenue",
-        icon: <MdWork />,
-      },
-      {
-        title: "Reports",
-        path: "/dashboard/reports",
+        title: "レポート",
+        path: "/homeboard/myreport",
         icon: <MdAnalytics />,
       },
-      {
-        title: "Teams",
-        path: "/dashboard/teams",
-        icon: <MdPeople />,
-      },
     ],
   },
   {
-    title: "User",
+    title: "ユーザー",
     list: [
       {
-        title: "Settings",
-        path: "/dashboard/settings",
-        icon: <MdOutlineSettings />,
-      },
-      {
-        title: "Help",
-        path: "/dashboard/help",
+        title: "使い方",
+        path: "/homeboard/help",
         icon: <MdHelpCenter />,
       },
     ],
@@ -85,14 +81,16 @@ const Sidebar = async () => {
       <div className={styles.user}>
         <Image
           className={styles.userImage}
-          src={user.img || "/noavatar.png"}
+          src="/noavatar.png"
           alt=""
           width="50"
           height="50"
         />
         <div className={styles.userDetail}>
           <span className={styles.username}>{user.username}</span>
-          <span className={styles.userTitle}>Administrator</span>
+          <span className={styles.userTitle}>
+            {user.isAdmin? "認証済み" : "ゲストユーザー"}
+          </span>
         </div>
       </div>
       <ul className={styles.list}>
@@ -105,6 +103,12 @@ const Sidebar = async () => {
           </li>
         ))}
       </ul>
+      <div>
+        <Link href={`/homeboard/users/${user.id}`} className={styles.setting}>
+          <MdOutlineSettings/>
+          ユーザー設定
+        </Link>
+      </div>
       <form
         action={async () => {
           "use server";
@@ -113,7 +117,7 @@ const Sidebar = async () => {
       >
         <button className={styles.logout}>
           <MdLogout />
-          Logout
+          ログアウト
         </button>
       </form>
     </div>

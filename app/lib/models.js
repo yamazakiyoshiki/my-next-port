@@ -35,6 +35,9 @@ const userSchema = new mongoose.Schema(
     address: {
       type: String,
     },
+    desc: {
+      type: String,
+    }
   },
   { timestamps: true }
 );
@@ -44,35 +47,31 @@ const problemSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-      unique: true,
     },
     desc: {
       type: String,
       required: true,
     },
-    price: {
+    cat: {
+      type: String,
+      required: true,
+    },
+    step: {
       type: Number,
       required: true,
       min: 0,
     },
-    stock: {
-      type: Number,
+    level: {
+      type: String,
       required: true,
-      min: 0,
     },
-    img: {
+    username: {
       type: String,
-    },
-    color: {
-      type: String,
-    },
-    size: {
-      type: String,
-    },
+      required: false,
+    }
   },
   { timestamps: true }
 );
 
 export const User = mongoose.models.User || mongoose.model("User", userSchema);
-export const Problem =
-  mongoose.models.Problem || mongoose.model("Problem", problemSchema);
+export const Problem = mongoose.models.Problem || mongoose.model("Problem", problemSchema);

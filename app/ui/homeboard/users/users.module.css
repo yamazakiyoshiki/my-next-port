@@ -59,3 +59,16 @@
 .delete{
   background-color: crimson;
 }
+
+@media screen and (max-width:450px) {
+  .table td{
+    writing-mode: horizontal-tb;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+  .userEmail,
+  .admin{
+    display: none;
+  }
+  /*=======max-width:450px========*/
+}

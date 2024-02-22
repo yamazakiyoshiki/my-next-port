@@ -1,7 +1,11 @@
+import CreateAccountForm from "./ui/login/createAccountForm/createAccountForm";
+
 const Homepage = () => {
   return (
-    <div>Homepage</div>
-  )
-}
+    <div>
+      <CreateAccountForm/>
+    </div>
+  );
+};
 
-export default Homepage
+export default Homepage;

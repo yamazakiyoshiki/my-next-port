@@ -1,9 +1,9 @@
 import { cards } from "../lib/data";
 import Card from "../ui/homeboard/card/card";
 import Chart from "../ui/homeboard/chart/chart";
-import styles from "../ui/homeboard/homeboard.module.css";
 import Rightbar from "../ui/homeboard/rightbar/rightbar";
-import Transactions from "../ui/homeboard/transactions/transactions";
+import HomeContents from "../ui/homeboard/homecontents/homecontens";
+import styles from "../ui/homeboard/homeboard.module.css";
 
 const Homeboard = () => {
   return (
@@ -14,7 +14,7 @@ const Homeboard = () => {
             <Card item={item} key={item.id} />
           ))}
         </div>
-        <Transactions />
+        <HomeContents />
         <Chart />
       </div>
       <div className={styles.side}>
