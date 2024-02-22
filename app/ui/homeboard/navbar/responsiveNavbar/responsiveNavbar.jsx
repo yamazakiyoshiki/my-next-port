@@ -48,7 +48,7 @@ const navContents = [
   },
   {
     title: "レポート",
-    path: "#",
+    path: "/homeboard/myreport",
     icon: <MdAnalytics />,
   },
   {

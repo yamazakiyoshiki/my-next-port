@@ -60,3 +60,18 @@
   cursor: pointer;
   margin-top: 20px;
 }
+
+@media screen and (max-width:450px) {
+  .imgContainer{
+    height: 150px;
+    z-index: 0;
+  }
+  /*=======max-width:450px========*/
+}
+
+@media screen and (max-width:700px) {
+  .imgContainer{
+    height: 200px;
+  }
+  /*=======max-width:700px========*/
+}

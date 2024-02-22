@@ -12,7 +12,6 @@ const MyPostPage = async ({ searchParams }) => {
   const {user} = await auth();
   const { count, posts } = await fetchUserPosts(q, page, user.username);
   const userPosts = posts.filter(post => post.username === user.username);
-  console.log(userPosts);
   return (
     <div className={styles.container}>
       <div className={styles.top}>

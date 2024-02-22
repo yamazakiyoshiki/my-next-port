@@ -9,7 +9,7 @@ const Rightbar = () => {
           <Image className={styles.bg} src="/astronaut.png" alt="" fill />
         </div>
         <div className={styles.text}>
-          <span className={styles.notification}>🔥 ProBoardの今後の予定</span>
+          <span className={styles.notification}>ProBoardの今後の予定</span>
           <h3 className={styles.title}>
             今後追加する予定の機能
           </h3>
@@ -23,7 +23,7 @@ const Rightbar = () => {
       </div>
       <div className={styles.item}>
         <div className={styles.text}>
-          <span className={styles.notification}>🚀 Ver.1.0.0</span>
+          <span className={styles.notification}> Ver.1.0.0</span>
           <h3 className={styles.title}>
             ProBoardリリース開始
           </h3>
