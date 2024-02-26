@@ -4,14 +4,11 @@
 
 
 <p style="display: inline">
-  <!-- フロントエンドのフレームワーク一覧 -->
   <img src="https://img.shields.io/badge/-JavaScript-F7Df1E.svg?logo=node.js&style=for-the-badge">
   <img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=for-the-badge">
   <img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=for-the-badge">
-  <!-- ミドルウェア一覧 -->
   <img src="https://img.shields.io/badge/-Mongoose-880000.svg?logo=mongoose&style=for-the-badge">
   <img src="https://img.shields.io/badge/-NextAuth-000000.svg?logo=&style=plastic">
-  <!-- インフラ一覧 -->
   <img src="https://img.shields.io/badge/-MongoDB-47A248.svg?logo=mongodb&style=for-the-badge&logoColor=white">
 </p>
 
@@ -64,7 +61,7 @@
 | Mongoose             | 8.0.0      |
 | NextAuth             | 5.0.0-beta.3      |
 
-その他のパッケージのバージョンは pyproject.toml と package.json を参照してください
+その他のパッケージのバージョンは package.json を参照してください
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
@@ -74,7 +71,6 @@
 ```
 
 .
-├── README.md
 ├── app
 │   ├── auth.js
 │   ├── authconfig.js
@@ -99,7 +95,6 @@
 
 ## 開発環境構築
 
-<!-- コンテナの作成方法、パッケージのインストール方法など、開発環境構築に必要な情報を記載 -->
 
 
 .env ファイルを以下の環境変数例と[環境変数の一覧](#環境変数の一覧)を元に作成
