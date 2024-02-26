@@ -1,41 +1,75 @@
 "use client"
 
-import { countProblemCat } from '@/app/lib/actions';
 import styles from './chart.module.css'
-import { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const getWeekdaysStartingToday = () => {
-  const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const today = new Date().getDay(); // 今日の曜日のインデックス (0-6)
-  return [...weekdays.slice(today), ...weekdays.slice(0, today)];
-};
+const data = [
+  {
+    name: "Sun",
+    JavaScript: 100,
+    TypeScript: 145,
+    React: 140,
+    Vue: 60,
+    NextJs: 109,
+    NuxtJs: 59,
+  },
+  {
+    name: "Mon",
+    JavaScript: 170,
+    TypeScript: 190,
+    React: 178,
+    Vue: 90,
+    NextJs: 120,
+    NuxtJs: 80,
+  },
+  {
+    name: "Tue",
+    JavaScript: 120,
+    TypeScript: 130,
+    React: 200,
+    Vue: 100,
+    NextJs: 170,
+    NuxtJs: 120,
+  },
+  {
+    name: "Wed",
+    JavaScript: 130,
+    TypeScript: 200,
+    React: 190,
+    Vue: 40,
+    NextJs: 109,
+    NuxtJs: 40,
+  },
+  {
+    name: "Thu",
+    JavaScript: 140,
+    TypeScript: 180,
+    React: 210,
+    Vue: 80,
+    NextJs: 160,
+    NuxtJs: 60,
+  },
+  {
+    name: "Fri",
+    JavaScript: 170,
+    TypeScript: 140,
+    React: 225,
+    Vue: 100,
+    NextJs: 150,
+    NuxtJs: 70,
+  },
+  {
+    name: "Sat",
+    JavaScript: 150,
+    TypeScript: 180,
+    React: 240,
+    Vue: 120,
+    NextJs: 170,
+    NuxtJs: 69,
+  },
+];
 
 const Chart =  () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const counts = await countProblemCat();
-        const weekdays = getWeekdaysStartingToday();
-        const chartData = weekdays.map(day => ({
-          name: day,
-          JavaScript: counts.JavaScript || 0,
-          TypeScript: counts.TypeScript || 0,
-          React: counts.React || 0,
-          Vue: counts.Vue || 0,
-          NextJs: counts.NextJs || 0,
-          NuxtJs: counts.NuxtJs || 0,
-        }));
-        setData(chartData);
-      } catch (err) {
-        console.error("Failed fetching chartData!", err);
-      }
-    };
-    fetchData();
-  }, []);
-
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>今週のジャンルトレンド</h2>
