@@ -73,6 +73,27 @@
 
 
 ❯ tree -I 'node_modules' -L 2
+.
+├── README.md
+├── app
+│   ├── auth.js
+│   ├── authconfig.js
+│   ├── homeboard
+│   ├── layout.js
+│   ├── lib
+│   ├── login
+│   ├── not-found.jsx
+│   ├── page.jsx
+│   └── ui
+├── jsconfig.json
+├── middleware.js
+├── next.config.js
+├── package-lock.json
+├── package.json
+└── public
+    ├── astronaut.png
+    ├── noavatar.png
+    └── noproblem.jpg
 
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
