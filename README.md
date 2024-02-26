@@ -72,7 +72,7 @@
 
 
 
-❯ tree -I 'node_modules' -L 2
+```
 .
 ├── README.md
 ├── app
@@ -94,7 +94,7 @@
     ├── astronaut.png
     ├── noavatar.png
     └── noproblem.jpg
-
+```
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
