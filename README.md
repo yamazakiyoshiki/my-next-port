@@ -21,7 +21,6 @@
 2. [環境](#環境)
 3. [ディレクトリ構成](#ディレクトリ構成)
 4. [開発環境構築](#開発環境構築)
-5. [トラブルシューティング](#トラブルシューティング)
 
 <br />
 <div align="right">
@@ -74,127 +73,18 @@
 
 
 
+.
+├── README.md
 ├── app
 │   ├── auth.js
 │   ├── authconfig.js
 │   ├── homeboard
-│   │   ├── help
-│   │   │   └── page.jsx
-│   │   ├── layout.jsx
-│   │   ├── page.jsx
-│   │   ├── problems
-│   │   │   ├── [id]
-│   │   │   │   ├── detail
-│   │   │   │   │   └── page.jsx
-│   │   │   │   ├── error.jsx
-│   │   │   │   ├── page.jsx
-│   │   │   │   └── resolve
-│   │   │   │       └── page.jsx
-│   │   │   ├── add
-│   │   │   │   ├── error.jsx
-│   │   │   │   └── page.jsx
-│   │   │   ├── mypost
-│   │   │   │   └── page.jsx
-│   │   │   ├── page.jsx
-│   │   │   └── resolves
-│   │   │       └── page.jsx
-│   │   └── users
-│   │       ├── [id]
-│   │       │   ├── error.jsx
-│   │       │   ├── page.jsx
-│   │       │   └── profile
-│   │       │       └── page.jsx
-│   │       ├── add
-│   │       │   └── page.jsx
-│   │       └── page.jsx
 │   ├── layout.js
 │   ├── lib
-│   │   ├── actions.js
-│   │   ├── data.js
-│   │   ├── models.js
-│   │   ├── services
-│   │   │   └── problemsService.js
-│   │   └── utils.js
 │   ├── login
-│   │   ├── error.jsx
-│   │   └── page.jsx
 │   ├── not-found.jsx
 │   ├── page.jsx
 │   └── ui
-│       ├── error.module.css
-│       ├── globals.css
-│       ├── homeboard
-│       │   ├── card
-│       │   │   ├── card.jsx
-│       │   │   └── card.module.css
-│       │   ├── chart
-│       │   │   ├── chart.jsx
-│       │   │   └── chart.module.css
-│       │   ├── footer
-│       │   │   ├── footer.jsx
-│       │   │   └── footer.module.css
-│       │   ├── help
-│       │   │   ├── help.jsx
-│       │   │   └── help.module.css
-│       │   ├── homeboard.module.css
-│       │   ├── homecontents
-│       │   │   ├── homecontens.jsx
-│       │   │   └── homecontents.module.css
-│       │   ├── navbar
-│       │   │   ├── navbar.jsx
-│       │   │   ├── navbar.module.css
-│       │   │   └── responsiveNavbar
-│       │   │       ├── navcontents
-│       │   │       │   ├── navcontents.jsx
-│       │   │       │   └── navcontents.module.css
-│       │   │       ├── responsiveNavbar.jsx
-│       │   │       └── responsiveNavbar.module.css
-│       │   ├── pagination
-│       │   │   ├── pagination.jsx
-│       │   │   └── pagination.module.css
-│       │   ├── problems
-│       │   │   ├── addProblem
-│       │   │   │   └── addProblem.module.css
-│       │   │   ├── detailProblem
-│       │   │   │   └── detail.module.css
-│       │   │   ├── mypost
-│       │   │   │   └── mypost.module.css
-│       │   │   ├── problems.module.css
-│       │   │   ├── resolveProblem
-│       │   │   │   └── resolves.module.css
-│       │   │   └── singleProblem
-│       │   │       └── singleProblem.module.css
-│       │   ├── resolve
-│       │   │   └── resolve.module.css
-│       │   ├── rightbar
-│       │   │   ├── rightbar.jsx
-│       │   │   └── rightbar.module.css
-│       │   ├── search
-│       │   │   ├── search.jsx
-│       │   │   └── search.module.css
-│       │   ├── sidebar
-│       │   │   ├── menuLink
-│       │   │   │   ├── menuLink.jsx
-│       │   │   │   └── menuLink.module.css
-│       │   │   ├── sidebar.jsx
-│       │   │   └── sidebar.module.css
-│       │   └── users
-│       │       ├── addUser
-│       │       │   └── addUser.module.css
-│       │       ├── singleUser
-│       │       │   ├── singleUser.module.css
-│       │       │   └── usersProfile
-│       │       │       └── usersProfile.module.css
-│       │       └── users.module.css
-│       ├── login
-│       │   ├── createAccountForm
-│       │   │   ├── createAccountForm.jsx
-│       │   │   └── createAccountForm.module.css
-│       │   ├── login.module.css
-│       │   └── loginForm
-│       │       ├── loginForm.jsx
-│       │       └── loginForm.module.css
-│       └── notfound.module.css
 ├── jsconfig.json
 ├── middleware.js
 ├── next.config.js
@@ -227,8 +117,8 @@ AUTH_URL=http://localhost:3000/api/auth
 
 | 変数名                 | 役割                                      | デフォルト値                       | DEV 環境での値                           |
 | ---------------------- | ----------------------------------------- | ---------------------------------- | ---------------------------------------- |
-| MONGO    | MongoDB のパスワード | root                               |                                          |
-| AUTH_SECRET         | NextAuthのシークレットキー   | django-db                          |                                          |
+| MONGO    | MongoDB のパスワード |
+| AUTH_SECRET         | NextAuthのシークレットキー   |
 | AUTH_URL             | NextAuth認証関連のAPIエンドポイント         |
 
 
