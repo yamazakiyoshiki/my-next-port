@@ -4,12 +4,13 @@
 
 
 <p style="display: inline">
-  <img src="https://img.shields.io/badge/-JavaScript-F7Df1E.svg?logo=node.js&style=for-the-badge">
   <img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=for-the-badge">
-  <img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=for-the-badge">
-  <img src="https://img.shields.io/badge/-Mongoose-880000.svg?logo=mongoose&style=for-the-badge">
-  <img src="https://img.shields.io/badge/-NextAuth-000000.svg?logo=&style=plastic">
   <img src="https://img.shields.io/badge/-MongoDB-47A248.svg?logo=mongodb&style=for-the-badge&logoColor=white">
+  <img src="https://img.shields.io/badge/-Mongoose-880000.svg?logo=mongoose&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-JavaScript-F7Df1E.svg?logo=javascript&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-NextAuth-000000.svg?logo=&style=plastic">
 </p>
 
 ## 目次
