@@ -72,7 +72,7 @@
 
 
 
-❯ tree -a -I "node_modules|.next|.git|.pytest_cache|static" -L 2
+❯ tree -I 'node_modules' -L 2
 
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
