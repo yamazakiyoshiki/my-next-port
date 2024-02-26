@@ -1,13 +1,9 @@
 import styles from "./rightbar.module.css";
-import Image from "next/image";
 
 const Rightbar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.item}>
-        <div className={styles.bgContainer}>
-          <Image className={styles.bg} src="/astronaut.png" alt="" fill />
-        </div>
         <div className={styles.text}>
           <span className={styles.notification}>ProBoardの今後の予定</span>
           <h3 className={styles.title}>
