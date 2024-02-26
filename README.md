@@ -91,7 +91,6 @@
 ├── package-lock.json
 ├── package.json
 └── public
-    ├── astronaut.png
     ├── noavatar.png
     └── noproblem.jpg
 ```
