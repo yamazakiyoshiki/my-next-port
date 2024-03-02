@@ -1,3 +1,23 @@
-.container{
-  
+.formContainer {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid #cbd5e1;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 8px 16px;
+  border: 1px solid;
+  border-radius: 8px;
+  outline: none;
+}
+
+.button {
+  margin-left: 16px;
+  padding: 8px 16px;
+  background-color: #10b981;
+  color: white;
+  border-radius: 8px;
+  outline: none;
 }

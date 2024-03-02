@@ -1,3 +1,38 @@
-.container{
-  
+.flexContainer {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.iconProvider {
+  font-size: 50px;
+}
+
+.chatBubble {
+  border-width: 1px;
+  border-color: lightgreen;
+  background-color: var(--bgSoft, #fff);
+  padding: 0.5rem 1rem;
+  width: auto;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+
+.chatBubbleAssistant {
+  border-radius: 0 20px 20px 20px;
+}
+
+.chatBubbleUser {
+  border-radius: 20px 0 20px 20px;
+}
+
+.label {
+  align-self: flex-end;
+  opacity: 0.5;
+  font-size: 15px;
+}
+
+.labelUser {
+  align-self: flex-start;
 }
