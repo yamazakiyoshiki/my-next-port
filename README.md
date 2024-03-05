@@ -48,6 +48,29 @@
     <br />
     <br />
 
+    ## 機能一覧
+| トップ画面 |　ログイン画面 |
+| ---- | ---- |
+| ![ログイン画面](file:///Users/user/Desktop/login.png) | ![ユーザー設定画面](file:///Users/user/Desktop/user_setting.png) |
+| ユーザーネームとパスワードでの認証機能を実装しました。 | アカウント情報を変更できる機能を実装しました。 |
+
+| ユーザー一覧画面 |　ユーザープロフィール画面 |
+| ---- | ---- |
+| ![ユーザー一覧画面](file:///Users/user/Desktop/users.png) | ![ユーザープロフィール画面](file:///Users/user/Desktop/user.png) |
+| 登録済みのユーザー一覧を確認できる機能を実装しました。 | 各登録ユーザーの設定したプロフィールを見ることができる機能を実装しました。 |
+
+| 問題一覧画面 |　問題チャレンジ画面 |
+| ---- | ---- |
+| ![問題一覧画面](file:///Users/user/Desktop/problems.png) | ![　問題チャレンジ画面](file:///Users/user/Desktop/problem.png) |
+| 各ユーザーが投稿した問題の一覧を確認できる機能を実装しました。 | 問題を実際に解くためのページを実装しました。 |
+
+| 投稿一覧画面 |　投稿内容編集画面 |
+| ---- | ---- |
+| ![投稿一覧画面](file:///Users/user/Desktop/myposts.png) | ![　投稿内容編集画面](file:///Users/user/Desktop/mypost.png) |
+| 自分の投稿一覧を確認、削除できる機能を実装しました。 | 投稿した内容を編集できる機能を実装しました。 |
+
+<br />
+
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
 ## 環境
