@@ -51,7 +51,7 @@
     ## 機能一覧
 | トップ画面 |　ログイン画面 |
 | ---- | ---- |
-| ![ログイン画面](/Users/user/Desktop/login.png) | ![ユーザー設定画面](/Users/user/Desktop/user_setting.png) |
+| ![ログイン画面]("https://github.com/yamazakiyoshiki/my-next-port/assets/144895624/39fb9f6e-e3dd-4d97-a810-afd1803a4063") | ![ユーザー設定画面](/Users/user/Desktop/user_setting.png) |
 | ユーザーネームとパスワードでの認証機能を実装しました。 | アカウント情報を変更できる機能を実装しました。 |
 
 | ユーザー一覧画面 |　ユーザープロフィール画面 |
