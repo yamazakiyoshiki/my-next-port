@@ -48,10 +48,15 @@
     <br />
     <br />
 
+<br />
+
+<p align="right">(<a href="#top">トップへ</a>)</p>
+
+
     ## 機能一覧
 | トップ画面 |　ログイン画面 |
 | ---- | ---- |
-| ![ログイン画面]("https://github.com/yamazakiyoshiki/my-next-port/assets/144895624/39fb9f6e-e3dd-4d97-a810-afd1803a4063") | ![ユーザー設定画面](/Users/user/Desktop/user_setting.png) |
+| ![ログイン画面](/public/login.png) | ![ユーザー設定画面](/public/user_setting.png) |
 | ユーザーネームとパスワードでの認証機能を実装しました。 | アカウント情報を変更できる機能を実装しました。 |
 
 | ユーザー一覧画面 |　ユーザープロフィール画面 |
@@ -68,10 +73,6 @@
 | ---- | ---- |
 | ![投稿一覧画面](/Desktop/myposts.png) | ![　投稿内容編集画面](/Desktop/mypost.png) |
 | 自分の投稿一覧を確認、削除できる機能を実装しました。 | 投稿した内容を編集できる機能を実装しました。 |
-
-<br />
-
-<p align="right">(<a href="#top">トップへ</a>)</p>
 
 ## 環境
 
