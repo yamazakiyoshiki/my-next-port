@@ -56,17 +56,17 @@
 
 | ユーザー一覧画面 |　ユーザープロフィール画面 |
 | ---- | ---- |
-| ![ユーザー一覧画面](/user/Desktop/users.png) | ![ユーザープロフィール画面](/user/Desktop/user.png) |
+| ![ユーザー一覧画面](/Desktop/users.png) | ![ユーザープロフィール画面](/Desktop/user.png) |
 | 登録済みのユーザー一覧を確認できる機能を実装しました。 | 各登録ユーザーの設定したプロフィールを見ることができる機能を実装しました。 |
 
 | 問題一覧画面 |　問題チャレンジ画面 |
 | ---- | ---- |
-| ![問題一覧画面](/user/Desktop/problems.png) | ![　問題チャレンジ画面](/user/Desktop/problem.png) |
+| ![問題一覧画面](/Desktop/problems.png) | ![　問題チャレンジ画面](/Desktop/problem.png) |
 | 各ユーザーが投稿した問題の一覧を確認できる機能を実装しました。 | 問題を実際に解くためのページを実装しました。 |
 
 | 投稿一覧画面 |　投稿内容編集画面 |
 | ---- | ---- |
-| ![投稿一覧画面](/user/Desktop/myposts.png) | ![　投稿内容編集画面](/user/Desktop/mypost.png) |
+| ![投稿一覧画面](/Desktop/myposts.png) | ![　投稿内容編集画面](/Desktop/mypost.png) |
 | 自分の投稿一覧を確認、削除できる機能を実装しました。 | 投稿した内容を編集できる機能を実装しました。 |
 
 <br />
